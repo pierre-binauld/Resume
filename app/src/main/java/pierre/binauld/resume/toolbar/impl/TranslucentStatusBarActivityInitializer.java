@@ -1,36 +1,37 @@
 package pierre.binauld.resume.toolbar.impl;
 
 
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import pierre.binauld.resume.R;
-import pierre.binauld.resume.toolbar.ToolbarInitializer;
+import pierre.binauld.resume.toolbar.ActivityInitializer;
 
 
 /**
- * Set up a Toolbar for an AppCompatActivity with translucent status bar.
- * Set up a top padding and make the status bar translucent.
+ * Initialize an activity.
+ * Set up a top padding to the toolbar and make the status bar translucent.
  */
-public class TranslucentToolbarInitializer implements ToolbarInitializer {
+public class TranslucentStatusBarActivityInitializer implements ActivityInitializer {
 
-    private ToolbarInitializer toolbarInitializer;
+    private ActivityInitializer activityInitializer;
 
     /**
      * Default constructor.
-     * Decor a other ToolbarInitializer.
-     * @param toolbarInitializer The other ToolbarInitializer.
+     * Decor another ActivityInitializer.
+     * @param activityInitializer The other ActivityInitializer.
      */
-    public TranslucentToolbarInitializer(ToolbarInitializer toolbarInitializer) {
-        this.toolbarInitializer = toolbarInitializer;
+    public TranslucentStatusBarActivityInitializer(ActivityInitializer activityInitializer) {
+        this.activityInitializer = activityInitializer;
     }
 
     @Override
-    public void initToolbar(AppCompatActivity activity, Toolbar toolbar) {
+    public void initActivity(AppCompatActivity activity, Toolbar toolbar, DrawerLayout drawerLayout) {
 
-        toolbarInitializer.initToolbar(activity, toolbar);
+        activityInitializer.initActivity(activity, toolbar, drawerLayout);
 
         toolbar.setPadding(0, getStatusBarHeight(activity), 0, 0);
 
@@ -42,7 +43,7 @@ public class TranslucentToolbarInitializer implements ToolbarInitializer {
 
     /**
      * A method to find height of the status bar
-     * @param activity The activity where the status bar come from.
+     * @param activity The activity where the status bar came from.
      * @return The height of the status bar.
      */
     private int getStatusBarHeight(AppCompatActivity activity) {
