@@ -7,18 +7,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import pierre.binauld.resume.toolbar.factory.ActivityInitializerFactory;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Bind(R.id.drawer_layout)   DrawerLayout drawerLayout;
+    @Bind(R.id.toolbar)         Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
 
         ActivityInitializerFactory
                 .getActivityInitializer()

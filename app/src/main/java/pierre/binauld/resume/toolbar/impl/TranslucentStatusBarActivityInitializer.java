@@ -40,7 +40,6 @@ public class TranslucentStatusBarActivityInitializer implements ActivityInitiali
         tintManager.setTintColor(activity.getResources().getColor(R.color.status_bar_color));
     }
 
-
     /**
      * A method to find height of the status bar
      * @param activity The activity where the status bar came from.
