@@ -4,10 +4,10 @@ import android.os.Build;
 
 import dagger.Module;
 import dagger.Provides;
-import pierre.binauld.resume.MainActivity;
-import pierre.binauld.resume.toolbar.ActivityInitializer;
-import pierre.binauld.resume.toolbar.impl.ActivityInitializerImpl;
-import pierre.binauld.resume.toolbar.impl.TranslucentStatusBarActivityInitializer;
+import pierre.binauld.resume.activities.MainActivity;
+import pierre.binauld.resume.activities.initializer.ActivityInitializer;
+import pierre.binauld.resume.activities.initializer.impl.ActivityInitializerImpl;
+import pierre.binauld.resume.activities.initializer.impl.TranslucentStatusBarActivityInitializer;
 
 @Module(
         injects = MainActivity.class

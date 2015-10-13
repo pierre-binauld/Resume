@@ -1,4 +1,4 @@
-package pierre.binauld.resume.toolbar.impl;
+package pierre.binauld.resume.activities.initializer.impl;
 
 
 import android.support.v4.widget.DrawerLayout;
@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import pierre.binauld.resume.R;
-import pierre.binauld.resume.toolbar.ActivityInitializer;
+import pierre.binauld.resume.activities.initializer.ActivityInitializer;
 
 
 /**

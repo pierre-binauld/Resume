@@ -1,4 +1,4 @@
-package pierre.binauld.resume;
+package pierre.binauld.resume.activities;
 
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -11,8 +11,9 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pierre.binauld.resume.R;
+import pierre.binauld.resume.activities.initializer.ActivityInitializer;
 import pierre.binauld.resume.application.Application;
-import pierre.binauld.resume.toolbar.ActivityInitializer;
 
 public class MainActivity extends AppCompatActivity {
 
