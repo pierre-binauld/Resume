@@ -1,16 +1,21 @@
-package pierre.binauld.resume.toolbar.factory;
-
+package pierre.binauld.resume.modules;
 
 import android.os.Build;
 
+import dagger.Module;
+import dagger.Provides;
+import pierre.binauld.resume.MainActivity;
 import pierre.binauld.resume.toolbar.ActivityInitializer;
 import pierre.binauld.resume.toolbar.impl.ActivityInitializerImpl;
 import pierre.binauld.resume.toolbar.impl.TranslucentStatusBarActivityInitializer;
 
-public class ActivityInitializerFactory {
+@Module(
+        injects = MainActivity.class
+)
+public class ApplicationModule {
 
-    public static ActivityInitializer getActivityInitializer() {
-
+    @Provides
+    public ActivityInitializer provideActivityInitializer() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             return new TranslucentStatusBarActivityInitializer(new ActivityInitializerImpl());
 
@@ -18,6 +23,5 @@ public class ActivityInitializerFactory {
             return new ActivityInitializerImpl();
 
         }
-
     }
 }
