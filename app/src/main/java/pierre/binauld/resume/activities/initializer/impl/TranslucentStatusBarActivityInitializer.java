@@ -1,6 +1,7 @@
 package pierre.binauld.resume.activities.initializer.impl;
 
 
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -37,7 +38,7 @@ public class TranslucentStatusBarActivityInitializer implements ActivityInitiali
 
         SystemBarTintManager tintManager = new SystemBarTintManager(activity);
         tintManager.setStatusBarTintEnabled(true);
-        tintManager.setTintColor(activity.getResources().getColor(R.color.status_bar_color));
+        tintManager.setTintColor(ContextCompat.getColor(activity, R.color.status_bar_color));
     }
 
     /**
