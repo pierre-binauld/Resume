@@ -4,7 +4,7 @@ import dagger.ObjectGraph;
 import pierre.binauld.resume.modules.ApplicationModule;
 
 /**
- * Android application class providing the dagger object graph.
+ * Android application class providing the dagger graph object.
  */
 public class Application extends android.app.Application {
 
@@ -14,7 +14,9 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        objectGraph = ObjectGraph.create(new ApplicationModule());
+        ApplicationModule applicationModule = new ApplicationModule(this);
+
+        objectGraph = ObjectGraph.create(applicationModule);
     }
 
     public ObjectGraph getObjectGraph() {

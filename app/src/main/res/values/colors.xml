@@ -5,6 +5,8 @@
     <color name="colorPrimaryDark">#00796B</color>
     <color name="colorAccent">#FFE57F</color>
 
+    <color name="background">#fafafa</color>
+
     <color name="drawer_background">#fff</color>
 
     <color name="status_bar_color">#20000000</color>
