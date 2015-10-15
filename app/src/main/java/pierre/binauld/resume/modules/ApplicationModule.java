@@ -12,7 +12,7 @@ import pierre.binauld.resume.activities.initializer.impl.KitkatStatusBarViewInit
 import pierre.binauld.resume.activities.initializer.impl.ViewInitializer;
 import pierre.binauld.resume.activities.view.ActivityViewHolder;
 import pierre.binauld.resume.activities.view.impl.MainActivityViewHolder;
-import pierre.binauld.resume.activities.view.impl.PhoneMainActivityViewHolder;
+import pierre.binauld.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
 
 /**
  * A Dagger module providing application providers.
@@ -61,7 +61,7 @@ public class ApplicationModule {
             case Configuration.SCREENLAYOUT_SIZE_NORMAL:
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
             default:
-                return new PhoneMainActivityViewHolder();
+                return new NormalScreenMainActivityViewHolder();
         }
 
     }
