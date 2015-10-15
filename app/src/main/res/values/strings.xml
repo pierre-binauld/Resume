@@ -7,4 +7,5 @@
 
     <string name="opened_drawer_content_desc">Drawer opened.</string>
     <string name="closed_drawer_content_desc">Drawer closed.</string>
+
 </resources>
