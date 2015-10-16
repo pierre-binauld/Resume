@@ -1,12 +1,12 @@
-package pierre.binauld.resume.activities.view.impl;
+package binauld.pierre.resume.activities.view.impl;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import binauld.pierre.resume.R;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
+import binauld.pierre.resume.activities.view.ActivityViewHolder;
 import butterknife.Bind;
-import pierre.binauld.resume.R;
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
-import pierre.binauld.resume.activities.view.ActivityViewHolder;
 
 /**
  * Hold views of main activity.

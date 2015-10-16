@@ -1,9 +1,9 @@
-package pierre.binauld.resume.activities.initializer;
+package binauld.pierre.resume.activities.initializer;
 
 import android.support.v7.app.AppCompatActivity;
 
-import pierre.binauld.resume.activities.view.impl.MainActivityViewHolder;
-import pierre.binauld.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
+import binauld.pierre.resume.activities.view.impl.MainActivityViewHolder;
+import binauld.pierre.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
 
 /**
  * Visitor for an ActivityViewHolder.

@@ -1,4 +1,4 @@
-package pierre.binauld.resume.activities;
+package binauld.pierre.resume.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,11 @@ import android.view.MenuItem;
 
 import javax.inject.Inject;
 
+import binauld.pierre.resume.R;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
+import binauld.pierre.resume.activities.view.ActivityViewHolder;
+import binauld.pierre.resume.application.Application;
 import butterknife.ButterKnife;
-import pierre.binauld.resume.R;
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
-import pierre.binauld.resume.activities.view.ActivityViewHolder;
-import pierre.binauld.resume.application.Application;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,18 +1,18 @@
-package pierre.binauld.resume.modules;
+package binauld.pierre.resume.modules;
 
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
 
+import binauld.pierre.resume.activities.MainActivity;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
+import binauld.pierre.resume.activities.initializer.impl.KitkatStatusBarViewInitializer;
+import binauld.pierre.resume.activities.initializer.impl.ViewInitializer;
+import binauld.pierre.resume.activities.view.ActivityViewHolder;
+import binauld.pierre.resume.activities.view.impl.MainActivityViewHolder;
+import binauld.pierre.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
 import dagger.Module;
 import dagger.Provides;
-import pierre.binauld.resume.activities.MainActivity;
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
-import pierre.binauld.resume.activities.initializer.impl.KitkatStatusBarViewInitializer;
-import pierre.binauld.resume.activities.initializer.impl.ViewInitializer;
-import pierre.binauld.resume.activities.view.ActivityViewHolder;
-import pierre.binauld.resume.activities.view.impl.MainActivityViewHolder;
-import pierre.binauld.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
 
 /**
  * A Dagger module providing application providers.

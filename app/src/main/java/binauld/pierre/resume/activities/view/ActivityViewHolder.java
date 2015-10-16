@@ -1,9 +1,9 @@
-package pierre.binauld.resume.activities.view;
+package binauld.pierre.resume.activities.view;
 
 
 import android.support.v7.app.AppCompatActivity;
 
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
 
 /**
  * An activity view holder hold views of an activity.

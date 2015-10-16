@@ -34,7 +34,7 @@
 
     <!-- The navigation drawer -->
     <fragment
-        android:name="pierre.binauld.resume.DrawerFragment"
+        android:name="binauld.pierre.resume.DrawerFragment"
         android:id="@+id/left_drawer"
         android:layout_width="@dimen/drawer_width"
         android:layout_height="match_parent"

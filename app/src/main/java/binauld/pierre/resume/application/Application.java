@@ -1,7 +1,7 @@
-package pierre.binauld.resume.application;
+package binauld.pierre.resume.application;
 
+import binauld.pierre.resume.modules.ApplicationModule;
 import dagger.ObjectGraph;
-import pierre.binauld.resume.modules.ApplicationModule;
 
 /**
  * Android application class providing the dagger graph object.

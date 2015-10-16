@@ -1,14 +1,14 @@
-package pierre.binauld.resume.activities.initializer.impl;
+package binauld.pierre.resume.activities.initializer.impl;
 
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
-import pierre.binauld.resume.R;
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
-import pierre.binauld.resume.activities.view.impl.MainActivityViewHolder;
-import pierre.binauld.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
+import binauld.pierre.resume.R;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
+import binauld.pierre.resume.activities.view.impl.MainActivityViewHolder;
+import binauld.pierre.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
 
 /**
  * Initialize activity views for kitkat.

@@ -1,4 +1,4 @@
-package pierre.binauld.resume;
+package binauld.pierre.resume;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

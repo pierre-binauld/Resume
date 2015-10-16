@@ -1,12 +1,12 @@
-package pierre.binauld.resume.activities.view.impl;
+package binauld.pierre.resume.activities.view.impl;
 
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 
+import binauld.pierre.resume.R;
+import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
 import butterknife.Bind;
-import pierre.binauld.resume.R;
-import pierre.binauld.resume.activities.initializer.ActivityViewHolderVisitor;
 
 /**
  * Hold views of main activity for normal screen.
