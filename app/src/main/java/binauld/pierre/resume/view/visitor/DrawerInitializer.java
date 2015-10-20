@@ -1,4 +1,4 @@
-package binauld.pierre.resume.fragments.initializer;
+package binauld.pierre.resume.view.visitor;
 
 import android.support.v7.widget.RecyclerView;
 

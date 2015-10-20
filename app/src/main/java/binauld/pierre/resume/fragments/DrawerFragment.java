@@ -13,9 +13,9 @@ import javax.inject.Inject;
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.adapters.DrawerAdapter;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.fragments.initializer.DrawerInitializer;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.view.DrawerViewHolder;
+import binauld.pierre.resume.view.visitor.DrawerInitializer;
 import butterknife.ButterKnife;
 
 

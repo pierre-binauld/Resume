@@ -5,8 +5,6 @@ import android.content.res.Configuration;
 import android.os.Build;
 
 import binauld.pierre.resume.activities.MainActivity;
-import binauld.pierre.resume.activities.initializer.KitkatStatusBarViewInitializer;
-import binauld.pierre.resume.activities.initializer.ViewInitializer;
 import binauld.pierre.resume.fragments.DrawerFragment;
 import binauld.pierre.resume.view.DrawerViewHolder;
 import binauld.pierre.resume.view.MainActivityViewHolder;
@@ -14,6 +12,8 @@ import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
 import binauld.pierre.resume.view.impl.GeneralDrawerViewHolder;
 import binauld.pierre.resume.view.impl.GeneralMainActivityViewHolder;
 import binauld.pierre.resume.view.impl.NormalScreenMainActivityViewHolder;
+import binauld.pierre.resume.view.visitor.KitkatStatusBarViewInitializer;
+import binauld.pierre.resume.view.visitor.ViewInitializer;
 import dagger.Module;
 import dagger.Provides;
 

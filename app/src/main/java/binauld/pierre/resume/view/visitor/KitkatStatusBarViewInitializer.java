@@ -1,4 +1,4 @@
-package binauld.pierre.resume.activities.initializer;
+package binauld.pierre.resume.view.visitor;
 
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
