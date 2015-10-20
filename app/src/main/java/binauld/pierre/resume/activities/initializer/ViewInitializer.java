@@ -1,22 +1,22 @@
-package binauld.pierre.resume.activities.initializer.impl;
+package binauld.pierre.resume.activities.initializer;
 
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
 import binauld.pierre.resume.R;
-import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
-import binauld.pierre.resume.activities.view.impl.MainActivityViewHolder;
-import binauld.pierre.resume.activities.view.impl.NormalScreenMainActivityViewHolder;
+import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
+import binauld.pierre.resume.view.impl.GeneralMainActivityViewHolder;
+import binauld.pierre.resume.view.impl.NormalScreenMainActivityViewHolder;
 
 /**
  * Initialize activity views.
  * Set up the toolbar as support action bar to the activity.
  * Set up the action bar drawer toggle.
  */
-public class ViewInitializer implements ActivityViewHolderVisitor {
+public class ViewInitializer implements MainActivityViewHolderVisitor {
 
     @Override
-    public void visit(AppCompatActivity activity, MainActivityViewHolder viewHolder) {
+    public void visit(AppCompatActivity activity, GeneralMainActivityViewHolder viewHolder) {
         activity.setSupportActionBar(viewHolder.toolbar);
     }
 

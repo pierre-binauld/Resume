@@ -8,18 +8,18 @@ import android.view.MenuItem;
 import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
-import binauld.pierre.resume.activities.initializer.ActivityViewHolderVisitor;
-import binauld.pierre.resume.activities.view.ActivityViewHolder;
 import binauld.pierre.resume.application.Application;
+import binauld.pierre.resume.view.MainActivityViewHolder;
+import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    protected ActivityViewHolder viewHolder;
+    protected MainActivityViewHolder viewHolder;
 
     @Inject
-    protected ActivityViewHolderVisitor viewInitializer;
+    protected MainActivityViewHolderVisitor viewInitializer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(viewHolder, this);
 
         viewHolder.accept(this, viewInitializer);
-
     }
 
     @Override
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
