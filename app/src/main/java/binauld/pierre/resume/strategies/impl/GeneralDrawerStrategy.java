@@ -15,6 +15,9 @@ import binauld.pierre.resume.strategies.DrawerStrategy;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * Define a general strategy for a drawer fragment.
+ */
 public class GeneralDrawerStrategy implements DrawerStrategy {
 
     @Bind(R.id.drawer_list)

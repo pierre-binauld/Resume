@@ -72,10 +72,13 @@ public class ApplicationModule {
 
     }
 
+    /**
+     * Provide a strategy for the drawer fragment.
+     * @return Return a strategy.
+     */
     @Provides
     public DrawerStrategy provideDrawerStrategy() {
 
         return new GeneralDrawerStrategy();
-
     }
 }

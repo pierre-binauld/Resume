@@ -12,7 +12,9 @@ import binauld.pierre.resume.application.Application;
 import binauld.pierre.resume.strategies.DrawerStrategy;
 import butterknife.ButterKnife;
 
-
+/**
+ * This is the drawer of the application.
+ */
 public class DrawerFragment extends Fragment {
 
     @Inject
