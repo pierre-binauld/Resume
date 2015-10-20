@@ -9,14 +9,18 @@ import binauld.pierre.resume.R;
 
 public class Account {
 
-    List<String> categories = new ArrayList<>();
+    List<Category> categories = new ArrayList<>();
 
     public Account(Resources res) {
-        categories.add(res.getString(R.string.account_category_education));
-        categories.add(res.getString(R.string.account_category_skills));
+
+        Category education  = new Category(res.getString(R.string.account_category_education), null);
+        Category skills     = new Category(res.getString(R.string.account_category_skills), null);
+
+        categories.add(education);
+        categories.add(skills);
     }
 
-    public List<String> getCategories() {
+    public List<Category> getCategories() {
         return categories;
     }
 }

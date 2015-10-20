@@ -4,53 +4,40 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.List;
 
 import binauld.pierre.resume.R;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import binauld.pierre.resume.model.Category;
+import binauld.pierre.resume.view.DrawerAdapterViewHolder;
 
-public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerAdapterViewHolder> {
+/**
+ * A recycler view adapter for drawer item list.
+ */
+public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapterViewHolder> {
 
-    private List<String> categories;
+    private List<Category> categories;
 
-    public static class DrawerAdapterViewHolder extends RecyclerView.ViewHolder {
-
-        @Bind(R.id.item_text)
-        public TextView textView;
-
-        public DrawerAdapterViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
-        }
-    }
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public DrawerAdapter(List<String> categories) {
+    /**
+     * Default constructor with categories as data set.
+     * @param categories The data set.
+     */
+    public DrawerAdapter(List<Category> categories) {
         this.categories = categories;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
-    public DrawerAdapter.DrawerAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DrawerAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.drawer_item, parent, false);
 
-        DrawerAdapterViewHolder vh = new DrawerAdapterViewHolder(v);
-        return vh;
+        return new DrawerAdapterViewHolder(v);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(DrawerAdapter.DrawerAdapterViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.textView.setText(categories.get(position));
-
+    public void onBindViewHolder(DrawerAdapterViewHolder holder, int position) {
+        holder.textView.setText(categories.get(position).getName());
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return categories.size();
