@@ -6,10 +6,10 @@ import android.os.Build;
 
 import binauld.pierre.resume.activities.MainActivity;
 import binauld.pierre.resume.fragments.DrawerFragment;
-import binauld.pierre.resume.view.DrawerViewHolder;
+import binauld.pierre.resume.strategies.DrawerStrategy;
+import binauld.pierre.resume.strategies.impl.GeneralDrawerStrategy;
 import binauld.pierre.resume.view.MainActivityViewHolder;
 import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
-import binauld.pierre.resume.view.impl.GeneralDrawerViewHolder;
 import binauld.pierre.resume.view.impl.GeneralMainActivityViewHolder;
 import binauld.pierre.resume.view.impl.NormalScreenMainActivityViewHolder;
 import binauld.pierre.resume.view.visitor.KitkatStatusBarViewInitializer;
@@ -73,9 +73,9 @@ public class ApplicationModule {
     }
 
     @Provides
-    public DrawerViewHolder provideDrawerViewHolder() {
+    public DrawerStrategy provideDrawerStrategy() {
 
-        return new GeneralDrawerViewHolder();
+        return new GeneralDrawerStrategy();
 
     }
 }
