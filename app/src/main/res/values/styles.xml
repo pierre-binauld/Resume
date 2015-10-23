@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="Theme.Resume" parent="Theme.AppCompat.Light.NoActionBar">
@@ -8,4 +8,67 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Resume" parent="Theme.Resume" />
+
+    <style name="Resume.Drawer">
+        <item name="android:layout_width">@dimen/drawer_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+    </style>
+
+    <style name="Resume.DrawerPanorama">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/drawer_account_panorama_height</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="Resume.DrawerPicture">
+        <item name="android:layout_width">@dimen/drawer_account_picture</item>
+        <item name="android:layout_height">@dimen/drawer_account_picture</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_marginTop">@dimen/drawer_account_picture_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/drawer_margin_start</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="Resume.DrawerSubtitle" parent="Theme.Resume">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Resume.DrawerSubtitle.Fullname">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Resume.DrawerSubtitle.Email">
+        <item name="android:textColor">#DEFFFFFF</item>
+    </style>
+
+    <style name="Resume.DrawerItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/drawer_list_item_height</item>
+    </style>
+
+    <style name="Resume.DrawerItem.Icon">
+        <item name="android:layout_width">@dimen/icon_size</item>
+        <item name="android:layout_height">@dimen/icon_size</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">@dimen/drawer_list_item_icon_margin_start</item>
+    </style>
+
+    <style name="Resume.DrawerItem.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">@dimen/drawer_list_item_text_margin_start</item>
+        <item name="android:layout_marginRight">@dimen/drawer_list_item_text_margin_end</item>
+    </style>
 </resources>

@@ -3,36 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context="binauld.resume.DrawerFragment">
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/drawer_background"
-    tools:context="binauld.binauld.resume.DrawerFragment">
+    android:background="@color/drawer_background">
 
     <ImageView
         android:id="@+id/drawer_account_panorama"
-        android:contentDescription="@string/drawer_account_wallpaper_content_description"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/drawer_account_panorama_height"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:scaleType="centerCrop" />
+        style="@style/Resume.DrawerPanorama"
+        android:contentDescription="@string/drawer_account_wallpaper_content_description"/>
 
     <ImageView
         android:id="@+id/drawer_account_picture"
-        android:contentDescription="@string/drawer_account_picture_content_description"
-        android:layout_width="@dimen/drawer_account_picture"
-        android:layout_height="@dimen/drawer_account_picture"
-        android:layout_marginTop="@dimen/drawer_account_picture_margin_top"
-        android:layout_marginStart="@dimen/drawer_margin_start"
-        android:layout_marginLeft="@dimen/drawer_margin_start"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:scaleType="centerCrop"/>
+        style="@style/Resume.DrawerPicture"
+        android:contentDescription="@string/drawer_account_picture_content_description"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -51,19 +38,11 @@
 
             <TextView
                 android:id="@+id/drawer_account_fullname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="sans-serif-medium"/>
+                style="@style/Resume.DrawerSubtitle.Fullname"/>
 
             <TextView
                 android:id="@+id/drawer_account_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="#DEFFFFFF"
-                android:fontFamily="sans-serif"/>
+                style="@style/Resume.DrawerSubtitle.Email"/>
 
         </LinearLayout>
 
@@ -80,18 +59,6 @@
         android:layout_marginTop="@dimen/drawer_space">
 
     </LinearLayout>
-
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/drawer_list"-->
-        <!--android:choiceMode="singleChoice"-->
-        <!--android:divider="@android:color/transparent"-->
-        <!--android:dividerHeight="0dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/drawer_account_panorama"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_marginTop="@dimen/drawer_space"/>-->
 
 </RelativeLayout>
 

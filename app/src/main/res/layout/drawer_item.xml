@@ -2,29 +2,14 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/drawer_list_item_height">
+    style="@style/Resume.DrawerItem">
 
     <ImageView
         android:id="@+id/item_icon"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_centerInParent="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="@dimen/drawer_list_item_icon_margin_start"
-        android:layout_marginLeft="@dimen/drawer_list_item_icon_margin_start" />
+        style="@style/Resume.DrawerItem.Icon"/>
 
     <TextView
         android:id="@+id/item_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="@dimen/drawer_list_item_text_margin_start"
-        android:layout_marginLeft="@dimen/drawer_list_item_text_margin_start"
-        android:layout_marginEnd="@dimen/drawer_list_item_text_margin_end"
-        android:layout_marginRight="@dimen/drawer_list_item_text_margin_end"/>
+        style="@style/Resume.DrawerItem.Text"/>
 
 </RelativeLayout>

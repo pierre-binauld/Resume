@@ -36,34 +36,6 @@ public class Account {
         categories.add(techSkills   );
         categories.add(experiences  );
         categories.add(misc         );
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
-        categories.add(new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school));
     }
 
     public List<Category> getCategories() {
