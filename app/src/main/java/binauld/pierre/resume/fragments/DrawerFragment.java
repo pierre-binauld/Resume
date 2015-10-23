@@ -29,9 +29,7 @@ public class DrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((Application) getActivity().getApplication()).getObjectGraph().inject(this);
 
-        View view = strategy.onCreateView(inflater, container, savedInstanceState);
-
-        return view;
+        return strategy.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override public void onDestroyView() {

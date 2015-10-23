@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="drawer_account_picture_margin_top">40dp</dimen>
+    <dimen name="drawer_account_panorama_height">160dp</dimen>
+</resources>

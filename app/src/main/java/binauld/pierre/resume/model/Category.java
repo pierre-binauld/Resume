@@ -1,13 +1,11 @@
 package binauld.pierre.resume.model;
 
-import android.graphics.drawable.Drawable;
-
 public class Category {
 
     private String name;
-    private Drawable icon;
+    private int icon;
 
-    public Category(String name, Drawable icon) {
+    public Category(String name, int icon) {
         this.name = name;
         this.icon = icon;
     }
@@ -16,15 +14,7 @@ public class Category {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Drawable getIcon() {
+    public int getIcon() {
         return icon;
-    }
-
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
     }
 }

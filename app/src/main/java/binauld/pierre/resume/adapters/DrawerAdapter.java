@@ -1,9 +1,12 @@
 package binauld.pierre.resume.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -35,7 +38,12 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapterViewHolder>
 
     @Override
     public void onBindViewHolder(DrawerAdapterViewHolder holder, int position) {
-        holder.textView.setText(categories.get(position).getName());
+        Category category = categories.get(position);
+
+        Context context = holder.iconView.getContext();
+
+        holder.textView.setText(category.getName());
+        Picasso.with(context).load(category.getIcon()).into(holder.iconView);
     }
 
     @Override
