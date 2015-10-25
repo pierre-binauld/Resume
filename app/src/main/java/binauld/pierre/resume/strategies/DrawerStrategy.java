@@ -1,15 +1,22 @@
 package binauld.pierre.resume.strategies;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import binauld.pierre.resume.model.Account;
 
 /**
  * Define an interface for different strategies of a drawer fragment.
  * Strategy may vary because of different configurations.
  */
 public interface DrawerStrategy {
+
+    Fragment getFragment();
+
+    Account getAccount();
 
     /**
      * The strategy used when fragment called its own onCreateView method.
@@ -20,4 +27,6 @@ public interface DrawerStrategy {
 
      */
     View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
+
+    void onDestroyView();
 }

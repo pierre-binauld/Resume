@@ -6,12 +6,13 @@ import android.os.Build;
 
 import binauld.pierre.resume.activities.MainActivity;
 import binauld.pierre.resume.fragments.DrawerFragment;
-import binauld.pierre.resume.strategies.DrawerStrategy;
+import binauld.pierre.resume.strategies.factory.DrawerStrategyFactory;
 import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
+import binauld.pierre.resume.strategies.factory.impl.GeneralDrawerStrategyFactory;
 import binauld.pierre.resume.strategies.factory.impl.GeneralMainActivityStrategyFactory;
 import binauld.pierre.resume.strategies.factory.impl.KitkatMainActivityStrategyFactory;
+import binauld.pierre.resume.strategies.factory.impl.NormalScreenDrawerStrategyFactory;
 import binauld.pierre.resume.strategies.factory.impl.NormalScreenMainActivityStrategyFactory;
-import binauld.pierre.resume.strategies.impl.GeneralDrawerStrategy;
 import dagger.Module;
 import dagger.Provides;
 
@@ -38,12 +39,12 @@ public class ApplicationModule {
 
         int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
 
-        MainActivityStrategyFactory strategy = new GeneralMainActivityStrategyFactory();
+        MainActivityStrategyFactory factory = new GeneralMainActivityStrategyFactory();
 
         switch (screenSize) {
             case Configuration.SCREENLAYOUT_SIZE_NORMAL:
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
-                strategy = new NormalScreenMainActivityStrategyFactory(strategy);
+                factory = new NormalScreenMainActivityStrategyFactory(factory);
                 break;
 
             case Configuration.SCREENLAYOUT_SIZE_XLARGE:
@@ -54,11 +55,11 @@ public class ApplicationModule {
 
         switch (Build.VERSION.SDK_INT) {
             case Build.VERSION_CODES.KITKAT:
-                strategy = new KitkatMainActivityStrategyFactory(strategy);
+                factory = new KitkatMainActivityStrategyFactory(factory);
                 break;
         }
 
-        return strategy;
+        return factory;
     }
 
     /**
@@ -66,8 +67,24 @@ public class ApplicationModule {
      * @return Return a strategy.
      */
     @Provides
-    public DrawerStrategy provideDrawerStrategy() {
+    public DrawerStrategyFactory provideDrawerStrategy() {
 
-        return new GeneralDrawerStrategy();
+        int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        DrawerStrategyFactory factory = new GeneralDrawerStrategyFactory();
+
+        switch (screenSize) {
+            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
+            case Configuration.SCREENLAYOUT_SIZE_SMALL:
+                factory = new NormalScreenDrawerStrategyFactory(factory);
+                break;
+
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
+            case Configuration.SCREENLAYOUT_SIZE_LARGE:
+            default:
+                break;
+        }
+
+        return factory;
     }
 }

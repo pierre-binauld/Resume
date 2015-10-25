@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import binauld.pierre.resume.application.Application;
+import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.DrawerStrategy;
-import butterknife.ButterKnife;
+import binauld.pierre.resume.strategies.factory.DrawerStrategyFactory;
 
 /**
  * This is the drawer of the application.
@@ -18,7 +19,9 @@ import butterknife.ButterKnife;
 public class DrawerFragment extends Fragment {
 
     @Inject
-    protected DrawerStrategy strategy;
+    protected DrawerStrategyFactory strategyFactory;
+
+    private DrawerStrategy strategy;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,15 @@ public class DrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((Application) getActivity().getApplication()).getObjectGraph().inject(this);
 
+        Account account = new Account(getResources());
+
+        strategy = strategyFactory.getActivityStrategy(this, account);
+
         return strategy.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        strategy.onDestroyView();
     }
 }
