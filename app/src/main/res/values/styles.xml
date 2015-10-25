@@ -1,12 +1,14 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
-    <style name="Theme.Resume" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Base" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="Theme.Resume" parent="Theme.Base"/>
 
     <style name="Resume" parent="Theme.Resume" />
 
