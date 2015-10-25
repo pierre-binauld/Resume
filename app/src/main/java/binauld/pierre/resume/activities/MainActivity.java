@@ -9,26 +9,25 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.view.MainActivityViewHolder;
-import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
-import butterknife.ButterKnife;
+import binauld.pierre.resume.strategies.MainActivityStrategy;
+import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
 
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    protected MainActivityViewHolder viewHolder;
+    protected MainActivityStrategyFactory strategyFactory;
 
-    @Inject
-    protected MainActivityViewHolderVisitor viewInitializer;
+    protected MainActivityStrategy strategy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ((Application) getApplication()).getObjectGraph().inject(this);
-        ButterKnife.bind(viewHolder, this);
 
-        viewHolder.accept(this, viewInitializer);
+        strategy = strategyFactory.getActivityStrategy(this);
+
+        strategy.onCreate(savedInstanceState);
     }
 
     @Override

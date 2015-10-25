@@ -7,13 +7,11 @@ import android.os.Build;
 import binauld.pierre.resume.activities.MainActivity;
 import binauld.pierre.resume.fragments.DrawerFragment;
 import binauld.pierre.resume.strategies.DrawerStrategy;
+import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
+import binauld.pierre.resume.strategies.factory.impl.GeneralMainActivityStrategyFactory;
+import binauld.pierre.resume.strategies.factory.impl.KitkatMainActivityStrategyFactory;
+import binauld.pierre.resume.strategies.factory.impl.NormalScreenMainActivityStrategyFactory;
 import binauld.pierre.resume.strategies.impl.GeneralDrawerStrategy;
-import binauld.pierre.resume.view.MainActivityViewHolder;
-import binauld.pierre.resume.view.MainActivityViewHolderVisitor;
-import binauld.pierre.resume.view.impl.GeneralMainActivityViewHolder;
-import binauld.pierre.resume.view.impl.NormalScreenMainActivityViewHolder;
-import binauld.pierre.resume.view.visitor.KitkatStatusBarViewInitializer;
-import binauld.pierre.resume.view.visitor.ViewInitializer;
 import dagger.Module;
 import dagger.Provides;
 
@@ -34,42 +32,33 @@ public class ApplicationModule {
         this.context = context;
     }
 
-    /**
-     * Provides a view initializer depend on the SDK version.
-     * @return A view initializer.
-     */
+
     @Provides
-    public MainActivityViewHolderVisitor provideViewInitializer() {
-
-        MainActivityViewHolderVisitor viewInitializer = new ViewInitializer();
-
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-            viewInitializer = new KitkatStatusBarViewInitializer(viewInitializer);
-        }
-
-        return viewInitializer;
-    }
-
-    /**
-     * Provides an activity view holder depend on the screen size.
-     * @return A view initializer.
-     */
-    @Provides
-    public MainActivityViewHolder provideMainActivityViewHolder() {
+    public MainActivityStrategyFactory provideMainActivityStrategyFactory() {
 
         int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
 
-        switch (screenSize) {
-            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
-            case Configuration.SCREENLAYOUT_SIZE_LARGE:
-                return new GeneralMainActivityViewHolder();
+        MainActivityStrategyFactory strategy = new GeneralMainActivityStrategyFactory();
 
+        switch (screenSize) {
             case Configuration.SCREENLAYOUT_SIZE_NORMAL:
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
+                strategy = new NormalScreenMainActivityStrategyFactory(strategy);
+                break;
+
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
+            case Configuration.SCREENLAYOUT_SIZE_LARGE:
             default:
-                return new NormalScreenMainActivityViewHolder();
+                break;
         }
 
+        switch (Build.VERSION.SDK_INT) {
+            case Build.VERSION_CODES.KITKAT:
+                strategy = new KitkatMainActivityStrategyFactory(strategy);
+                break;
+        }
+
+        return strategy;
     }
 
     /**
