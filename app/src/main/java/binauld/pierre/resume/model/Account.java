@@ -25,11 +25,11 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        Category education   = new Category(res.getString(R.string.account_category_education    ), R.drawable.ic_social_school);
-        Category skills      = new Category(res.getString(R.string.account_category_skills       ), R.drawable.ic_social_school);
-        Category techSkills  = new Category(res.getString(R.string.account_category_tech_skills  ), R.drawable.ic_action);
-        Category experiences = new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_social_school);
-        Category misc        = new Category(res.getString(R.string.account_category_miscellaneous), R.drawable.ic_social_school);
+        Category education   = new Category(res.getString(R.string.account_category_education    ), R.drawable.ic_school);
+        Category skills      = new Category(res.getString(R.string.account_category_skills       ), R.drawable.ic_box);
+        Category techSkills  = new Category(res.getString(R.string.account_category_tech_skills  ), R.drawable.ic_tool);
+        Category experiences = new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_briefcase);
+        Category misc        = new Category(res.getString(R.string.account_category_miscellaneous), R.drawable.ic_plugin);
 
         categories.add(education    );
         categories.add(skills       );
