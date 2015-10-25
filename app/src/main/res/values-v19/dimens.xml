@@ -2,5 +2,5 @@
 <resources>
 
     <dimen name="drawer_account_picture_margin_top">40dp</dimen>
-    <dimen name="drawer_account_panorama_height">160dp</dimen>
+    <dimen name="drawer_account_panorama_height">171dp</dimen>
 </resources>
