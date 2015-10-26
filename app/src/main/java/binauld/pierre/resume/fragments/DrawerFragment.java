@@ -19,6 +19,9 @@ import binauld.pierre.resume.strategies.factory.DrawerStrategyFactory;
 public class DrawerFragment extends Fragment {
 
     @Inject
+    protected Account account;
+
+    @Inject
     protected DrawerStrategyFactory strategyFactory;
 
     private DrawerStrategy strategy;
@@ -31,8 +34,6 @@ public class DrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((Application) getActivity().getApplication()).getObjectGraph().inject(this);
-
-        Account account = new Account(getResources());
 
         strategy = strategyFactory.getActivityStrategy(this, account);
 

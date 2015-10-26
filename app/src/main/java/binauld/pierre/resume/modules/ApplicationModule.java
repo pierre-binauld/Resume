@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
 
+import javax.inject.Singleton;
+
 import binauld.pierre.resume.activities.MainActivity;
 import binauld.pierre.resume.fragments.DrawerFragment;
+import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.factory.DrawerStrategyFactory;
 import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
 import binauld.pierre.resume.strategies.factory.impl.GeneralDrawerStrategyFactory;
@@ -86,5 +89,14 @@ public class ApplicationModule {
         }
 
         return factory;
+    }
+
+    /**
+     * Provide the current account use by the app.
+     * @return The account.
+     */
+    @Provides @Singleton
+    public Account provideAccount() {
+        return new Account(context.getResources());
     }
 }
