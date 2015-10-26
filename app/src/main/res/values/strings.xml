@@ -10,8 +10,8 @@
 
     <string name="opened_drawer_content_desc">Drawer opened.</string>
     <string name="closed_drawer_content_desc">Drawer closed.</string>
-    <string name="drawer_account_picture_content_description">Picture for the current account.</string>
-    <string name="drawer_account_wallpaper_content_description">Picture for the current wallpaper account.</string>
+    <string name="drawer_header_picture_content_description">Picture for the current account.</string>
+    <string name="drawer_header_background_content_description">Picture for the current wallpaper account.</string>
 
     <string name="account_category_education">Education</string>
     <string name="account_category_skills">Skills</string>

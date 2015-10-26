@@ -3,21 +3,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="drawer_list_item_height">48dp</dimen>
-    <dimen name="drawer_width">304dp</dimen>
-    <dimen name="drawer_account_picture">60dp</dimen>
-    <dimen name="drawer_account_picture_margin_top">16dp</dimen>
+    <dimen name="drawer_header_height">147dp</dimen>
+    <dimen name="drawer_header_picture">60dp</dimen>
+    <dimen name="drawer_header_picture_margin">16dp</dimen>
+    <dimen name="drawer_header_subtitle_height">56dp</dimen>
     <dimen name="drawer_margin_start">16dp</dimen>
-    <dimen name="drawer_account_panorama_height">147dp</dimen>
-    <dimen name="drawer_subtitle">56dp</dimen>
+
     <dimen name="elevation">4dp</dimen>
+
     <dimen name="icon_size">24dp</dimen>
-
-    <dimen name="list_item_icon_margin_start">16dp</dimen>
-    <dimen name="list_item_content_margin_start">72dp</dimen>
-    <dimen name="list_item_content_margin_end">@dimen/list_item_icon_margin_start</dimen>
-
-    <dimen name="space_between_content">8dp</dimen>
 
     <dimen name="toolbar_elevation">@dimen/elevation</dimen>
 </resources>

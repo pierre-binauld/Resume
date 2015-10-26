@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import binauld.pierre.resume.R;
+import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
 public class KitkatMainActivityStrategy implements MainActivityStrategy {
 
@@ -22,6 +23,11 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
     @Override
     public AppCompatActivity getActivity() {
         return activity;
+    }
+
+    @Override
+    public Account getAccount() {
+        return strategy.getAccount();
     }
 
     @Override

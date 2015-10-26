@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/drawer_header_height" >
+
+    <ImageView
+        android:id="@+id/drawer_header_background"
+        style="@style/Resume.DrawerBackground"
+        android:contentDescription="@string/drawer_header_background_content_description"/>
+
+    <ImageView
+        android:id="@+id/drawer_header_picture"
+        style="@style/Resume.DrawerPicture"
+        android:contentDescription="@string/drawer_header_picture_content_description"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drawer_header_subtitle_height"
+        android:layout_alignBottom="@id/drawer_header_background"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/drawer_margin_start"
+            android:layout_marginLeft="@dimen/drawer_margin_start"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/drawer_header_subtitle_fullname"
+                style="@style/Resume.DrawerSubtitle.Fullname"/>
+
+            <TextView
+                android:id="@+id/drawer_header_subtitle_email"
+                style="@style/Resume.DrawerSubtitle.Email"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
