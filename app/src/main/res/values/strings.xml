@@ -13,10 +13,10 @@
     <string name="drawer_header_picture_content_description">Picture for the current account.</string>
     <string name="drawer_header_background_content_description">Picture for the current wallpaper account.</string>
 
-    <string name="account_category_education">Education</string>
-    <string name="account_category_skills">Skills</string>
-    <string name="account_category_tech_skills">Technical Skills</string>
-    <string name="account_category_experiences">Experiences</string>
-    <string name="account_category_miscellaneous">Miscellaneous</string>
+    <string name="nav_item_education">Education</string>
+    <string name="nav_item_skills">Skills</string>
+    <string name="nav_item_tech_skills">Technical Skills</string>
+    <string name="nav_item_experiences">Experiences</string>
+    <string name="nav_item_misc">Miscellaneous</string>
 
 </resources>

@@ -1,10 +1,13 @@
 package binauld.pierre.resume.strategies.impl;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +33,9 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
 
     @Bind(R.id.drawer_layout)
     public DrawerLayout drawerLayout;
+
+    @Bind(R.id.left_drawer)
+    public NavigationView drawer;
 
     @Bind(R.id.drawer_header_picture)
     public ImageView headerPictureView;
@@ -89,5 +95,17 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
 
         fullNameView.setText(account.getFullName());
         emailView.setText(account.getEmail());
+
+        drawer.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        if (strategy.onNavigationItemSelected(menuItem)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

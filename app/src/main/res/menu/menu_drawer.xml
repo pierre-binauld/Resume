@@ -1,5 +1,28 @@
-<menu
-    xmlns:tools="http://schemas.android.com/tools"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".MainActivity">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_education"
+            android:checked="true"
+            android:icon="@drawable/ic_school"
+            android:title="@string/nav_item_education" />
+        <item
+            android:id="@+id/nav_item_skills"
+            android:icon="@drawable/ic_box"
+            android:title="@string/nav_item_skills" />
+        <item
+            android:id="@+id/nav_item_tech_skills"
+            android:icon="@drawable/ic_tool"
+            android:title="@string/nav_item_tech_skills" />
+        <item
+            android:id="@+id/nav_item_experiences"
+            android:icon="@drawable/ic_briefcase"
+            android:title="@string/nav_item_experiences" />
+        <item
+            android:id="@+id/nav_item_misc"
+            android:icon="@drawable/ic_plugin"
+            android:title="@string/nav_item_misc" />
+    </group>
 </menu>

@@ -3,6 +3,7 @@ package binauld.pierre.resume.strategies.impl;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
@@ -37,5 +38,10 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
         SystemBarTintManager tintManager = new SystemBarTintManager(activity);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setTintColor(ContextCompat.getColor(activity, R.color.status_bar_color));
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        return strategy.onNavigationItemSelected(menuItem);
     }
 }
