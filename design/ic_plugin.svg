@@ -15,9 +15,9 @@
    width="24"
    height="24"
    sodipodi:docname="ic_plugin.svg"
-   inkscape:export-filename="/home/pierre/workspace/android-studio/Resume/app/src/main/res/drawable-xxxhdpi/ic_lego.png"
-   inkscape:export-xdpi="360"
-   inkscape:export-ydpi="360">
+   inkscape:export-filename="/home/pierre/workspace/android-studio/Resume/app/src/main/res/drawable-mdpi/ic_plugin.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <metadata
      id="metadata3820">
     <rdf:RDF>
@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -48,7 +48,7 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="22.627417"
-     inkscape:cx="22.678168"
+     inkscape:cx="14.966285"
      inkscape:cy="13.723103"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -140,19 +140,19 @@
        id="guide3068" />
   </sodipodi:namedview>
   <path
-     style="opacity:0.54000005;fill:#000000;fill-opacity:1;stroke:none"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none"
      d="M 4,5.002029 4,7 l 5.9989318,0 0,-1.997971 C 9.9989318,4.296875 9.6992188,4 8.9990387,4 L 5.007522,4 C 4.3007813,4 4,4.296875 4,5.002029 z"
      id="path3824"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccc" />
   <path
-     style="fill:#000000;fill-opacity:1;stroke:none;opacity:0.54"
+     style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
      d="m 2,8 0,9 c 0.010844,2 1.0007812,3.000427 3.0023437,3 L 19.013281,20 C 21,20.000427 22.008699,19 22.015625,17 l 0,-9 z"
      id="path3824-6-7"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccc" />
   <path
-     style="opacity:0.54000005;fill:#000000;fill-opacity:1;stroke:none"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none"
      d="m 14.004456,5.002029 0,1.997971 5.998932,0 0,-1.997971 C 20.003388,4.296875 19.703675,4 19.003495,4 l -3.991517,0 c -0.70674,0 -1.007522,0.296875 -1.007522,1.002029 z"
      id="path3824-8"
      inkscape:connector-curvature="0"
