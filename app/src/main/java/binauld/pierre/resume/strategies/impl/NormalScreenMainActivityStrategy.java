@@ -1,7 +1,6 @@
 package binauld.pierre.resume.strategies.impl;
 
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,9 +30,6 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
 
     @Bind(R.id.drawer_layout)
     public DrawerLayout drawerLayout;
-
-    @Bind(R.id.left_drawer)
-    public NavigationView drawer;
 
     @Bind(R.id.drawer_header_picture)
     public ImageView headerPictureView;
@@ -78,9 +74,6 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-        ButterKnife.bind(this, activity);
-//        ButterKnife.bind(this, drawer);
-
         Picasso
                 .with(activity)
                 .load(account.getPictureAccount())
@@ -92,8 +85,6 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
         Picasso
                 .with(activity)
                 .load(account.getPicturePanorama())
-//                .resizeDimen(drawer.getWidth(), R.dimen.drawer_header_background_height)
-//                .centerCrop()
                 .into(headerBackgroundView);
 
         fullNameView.setText(account.getFullName());
