@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
 import binauld.pierre.resume.R;
@@ -49,25 +48,26 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         activity.setSupportActionBar(toolbar);
 
         drawer.setNavigationItemSelectedListener(this);
+        loadEducationFragmment();
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_item_education:
-                onEducationClick(menuItem);
+                loadEducationFragmment();
                 break;
             case R.id.nav_item_skills:
-                onSkillsClick(menuItem);
+                loadSkillsFragment();
                 break;
             case R.id.nav_item_tech_skills:
-                onTechSkillsClick(menuItem);
+                loadTechSkillsFragment();
                 break;
             case R.id.nav_item_experiences:
-                onExperiencesClick(menuItem);
+                loadExperiencesFragment();
                 break;
             case R.id.nav_item_misc:
-                onMiscClick(menuItem);
+                loadMiscFragment();
                 break;
             default:
                 return false;
@@ -76,28 +76,22 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         return true;
     }
 
-    public void onEducationClick(MenuItem item) {
-        Log.d(this.getClass().toString(), "onEducationClick");
-
+    public void loadEducationFragmment() {
         Fragment newFragment = new ListFragment();
         switchFragment(newFragment);
+    }
+
+    public void loadSkillsFragment() {
 
     }
 
-    public void onSkillsClick(MenuItem item) {
-        Log.d(this.getClass().toString(), "onSkillsClick");
+    public void loadTechSkillsFragment() {
     }
 
-    public void onTechSkillsClick(MenuItem item) {
-        Log.d(this.getClass().toString(), "onTechSkillsClick");
+    public void loadExperiencesFragment() {
     }
 
-    public void onExperiencesClick(MenuItem item) {
-        Log.d(this.getClass().toString(), "onExperiencesClick");
-    }
-
-    public void onMiscClick(MenuItem item) {
-        Log.d(this.getClass().toString(), "onMiscClick");
+    public void loadMiscFragment() {
     }
 
     public void switchFragment(Fragment newFragment) {
