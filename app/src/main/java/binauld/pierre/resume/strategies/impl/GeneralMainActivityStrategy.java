@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import binauld.pierre.resume.R;
+import binauld.pierre.resume.adapters.EducationAdapter;
 import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
@@ -77,8 +78,9 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     }
 
     public void loadEducationFragmment() {
-        Fragment newFragment = new ListFragment();
-        switchFragment(newFragment);
+        ListFragment educationFragment = new ListFragment();
+        educationFragment.setAdapter(new EducationAdapter(activity, account.getEducation()));
+        switchFragment(educationFragment);
     }
 
     public void loadSkillsFragment() {

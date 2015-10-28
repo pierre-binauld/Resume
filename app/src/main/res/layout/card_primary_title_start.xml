@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/spacing_title"
+    android:paddingBottom="@dimen/spacing_content"
+    android:paddingRight="@dimen/spacing_content"
+    android:paddingLeft="@dimen/spacing_content">
+
+    <TextView
+        android:id="@+id/card_primary_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <TextView
+        android:id="@+id/card_primary_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/dark_on_light_secondary"/>
+
+</LinearLayout>

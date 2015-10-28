@@ -14,7 +14,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Category> categories = new ArrayList<>();
+    private List<Education> educations = new ArrayList<>();
 
     public Account(Resources res) {
 
@@ -25,21 +25,12 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-//        Category education   = new Category(res.getString(R.string.account_category_education    ), R.drawable.ic_school);
-//        Category skills      = new Category(res.getString(R.string.account_category_skills       ), R.drawable.ic_box);
-//        Category techSkills  = new Category(res.getString(R.string.account_category_tech_skills  ), R.drawable.ic_tool);
-//        Category experiences = new Category(res.getString(R.string.account_category_experiences  ), R.drawable.ic_briefcase);
-//        Category misc        = new Category(res.getString(R.string.account_category_miscellaneous), R.drawable.ic_plugin);
+        Education education1 = new Education(R.drawable.polytech_lyon,  "Polytech Lyon",    "Studied Computer Science");
+        Education education2 = new Education(R.drawable.iut_annecy,     "IUT Annecy",       "Studied Computer Science");
 
-//        categories.add(education    );
-//        categories.add(skills       );
-//        categories.add(techSkills   );
-//        categories.add(experiences  );
-//        categories.add(misc         );
-    }
+        educations.add(education1);
+        educations.add(education2);
 
-    public List<Category> getCategories() {
-        return categories;
     }
 
     public int getPictureAccount() {
@@ -64,6 +55,10 @@ public class Account {
 
     public int getPicturePanorama() {
         return picturePanorama;
+    }
+
+    public List<Education> getEducation() {
+        return educations;
     }
 }
 

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import binauld.pierre.resume.R;
-import binauld.pierre.resume.adapters.EducationAdapter;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -22,11 +21,7 @@ public class ListFragment extends Fragment {
     @Bind(R.id.fragment_list_view)
     protected RecyclerView listView;
 
-
-
-    public ListFragment() {
-        // Required empty public constructor
-    }
+    private RecyclerView.Adapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,11 +33,12 @@ public class ListFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         listView.setLayoutManager(layoutManager);
 
-        RecyclerView.Adapter adapter = new EducationAdapter();
         listView.setAdapter(adapter);
 
         return view;
     }
 
-
+    public void setAdapter(RecyclerView.Adapter adapter) {
+        this.adapter = adapter;
+    }
 }

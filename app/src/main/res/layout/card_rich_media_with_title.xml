@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/card_rich_media"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/spacing_title"
+        android:paddingBottom="@dimen/spacing_content"
+        android:paddingRight="@dimen/spacing_content"
+        android:paddingLeft="@dimen/spacing_content"
+        android:background="@drawable/text_background_gradient_dark">
+
+        <TextView
+            android:id="@+id/card_primary_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/white_on_dark_primary"/>
+
+        <TextView
+            android:id="@+id/card_primary_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white_on_dark_secondary"/>
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

@@ -13,5 +13,9 @@
 
     <dimen name="icon_size">24dp</dimen>
 
+    <dimen name="spacing_action">8dp</dimen>
+    <dimen name="spacing_content">16dp</dimen>
+    <dimen name="spacing_title">24dp</dimen>
+
     <dimen name="toolbar_elevation">@dimen/elevation</dimen>
 </resources>
