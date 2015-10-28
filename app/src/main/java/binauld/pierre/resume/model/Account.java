@@ -25,8 +25,18 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        Education education1 = new Education(R.drawable.polytech_lyon,  "Polytech Lyon",    "Studied Computer Science");
-        Education education2 = new Education(R.drawable.iut_annecy,     "IUT Annecy",       "Studied Computer Science");
+        Education education1 = new Education(
+                R.drawable.polytech_lyon,
+                "Polytech Lyon",
+                "Polytech Lyon, 15 Boulevard André Latarget, 69100 Villeurbanne",
+                "http://polytech.univ-lyon1.fr/",
+                "IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux");
+        Education education2 = new Education(
+                R.drawable.iut_annecy,
+                "IUT Annecy",
+                "Studied Computer Science",
+                "https://www.iut-acy.univ-smb.fr/\n",
+                "Studied Computer Science");
 
         educations.add(education1);
         educations.add(education2);

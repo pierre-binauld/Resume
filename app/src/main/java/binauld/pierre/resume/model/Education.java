@@ -4,12 +4,16 @@ public class Education {
 
     private int picture;
     private String school;
+    private String place;
+    private String webSite;
     private String field;
 
-    public Education(int picture, String school, String field) {
+    public Education(int picture, String school, String place, String webSite, String field) {
         this.picture = picture;
-        this.school = school;
-        this.field = field;
+        this.school  = school;
+        this.place   = place;
+        this.webSite = webSite;
+        this.field   = field;
     }
 
     public int getPicture() {
@@ -22,5 +26,13 @@ public class Education {
 
     public String getField() {
         return field;
+    }
+
+    public String getWebSite() {
+        return webSite;
+    }
+
+    public String getPlace() {
+        return place;
     }
 }
