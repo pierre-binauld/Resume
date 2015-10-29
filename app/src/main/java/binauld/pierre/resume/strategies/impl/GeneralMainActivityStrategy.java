@@ -62,6 +62,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
+
         switch (menuItem.getItemId()) {
             case R.id.nav_item_education:
                 loadEducationFragment();
@@ -81,6 +82,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
             default:
                 return false;
         }
+
+        activity.setTitle(menuItem.getTitle());
 
         return true;
     }
