@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.adapters.EducationAdapter;
 import binauld.pierre.resume.fragments.ListFragment;
+import binauld.pierre.resume.listeners.BrowserListener;
+import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
 import butterknife.Bind;
@@ -22,6 +24,9 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
     private Account account;
 
+    private LocationListener locationListener;
+    private BrowserListener  browserListener;
+
     @Bind(R.id.toolbar)
     public Toolbar toolbar;
 
@@ -32,6 +37,9 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         this.activity = activity;
         this.account = account;
         ButterKnife.bind(this, activity);
+
+        locationListener = new LocationListener(activity);
+        browserListener  = new BrowserListener(activity);
     }
 
     @Override
@@ -49,14 +57,14 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         activity.setSupportActionBar(toolbar);
 
         drawer.setNavigationItemSelectedListener(this);
-        loadEducationFragmment();
+        loadEducationFragment();
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_item_education:
-                loadEducationFragmment();
+                loadEducationFragment();
                 break;
             case R.id.nav_item_skills:
                 loadSkillsFragment();
@@ -77,26 +85,32 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         return true;
     }
 
-    public void loadEducationFragmment() {
+    private void loadEducationFragment() {
         ListFragment educationFragment = new ListFragment();
-        educationFragment.setAdapter(new EducationAdapter(activity, account.getEducation()));
+        EducationAdapter adapter = new EducationAdapter(
+                activity,
+                account.getEducation(),
+                locationListener,
+                browserListener
+        );
+        educationFragment.setAdapter(adapter);
         switchFragment(educationFragment);
     }
 
-    public void loadSkillsFragment() {
+    private void loadSkillsFragment() {
 
     }
 
-    public void loadTechSkillsFragment() {
+    private void loadTechSkillsFragment() {
     }
 
-    public void loadExperiencesFragment() {
+    private void loadExperiencesFragment() {
     }
 
-    public void loadMiscFragment() {
+    private void loadMiscFragment() {
     }
 
-    public void switchFragment(Fragment newFragment) {
+    private void switchFragment(Fragment newFragment) {
         FragmentTransaction transaction = activity.getFragmentManager().beginTransaction();
 
         transaction.replace(R.id.content_frame, newFragment);

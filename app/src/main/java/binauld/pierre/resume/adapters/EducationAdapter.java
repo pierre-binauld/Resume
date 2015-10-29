@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import binauld.pierre.resume.R;
+import binauld.pierre.resume.listeners.BrowserListener;
+import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Education;
 import binauld.pierre.resume.view.EducationViewHolder;
 
@@ -19,16 +21,34 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
 
     private Context context;
     private List<Education> educations;
+    private LocationListener locationListener;
+    private BrowserListener browserListener;
 
-    public EducationAdapter(Context context, List<Education> educations) {
+    public EducationAdapter(Context context, List<Education> educations, LocationListener locationListener, BrowserListener browserListener) {
         this.context = context;
         this.educations = educations;
+        this.locationListener = locationListener;
+        this.browserListener = browserListener;
     }
 
     @Override
     public EducationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.education_item, parent, false);
+
+        EducationViewHolder holder = new EducationViewHolder(v);
+
+        holder.action1.setOnClickListener(locationListener);
+        Picasso
+                .with(context)
+                .load(R.drawable.ic_room)
+                .into(holder.action1);
+
+        holder.action2.setOnClickListener(browserListener);
+        Picasso
+                .with(context)
+                .load(R.drawable.ic_browse)
+                .into(holder.action2);
 
         return new EducationViewHolder(v);
     }
@@ -46,16 +66,7 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
         holder.primarySubtitle.setText(education.getField());
 
         holder.action1.setTag(education.getPlace());
-        Picasso
-                .with(context)
-                .load(R.drawable.ic_room)
-                .into(holder.action1);
-
-        holder.action2.setTag(education.getWebSite());
-        Picasso
-                .with(context)
-                .load(R.drawable.ic_browse)
-                .into(holder.action2);
+        holder.action2.setTag(education.getWebPage());
     }
 
     @Override

@@ -34,8 +34,8 @@ public class Account {
         Education education2 = new Education(
                 R.drawable.iut_annecy,
                 "IUT Annecy",
-                "Studied Computer Science",
-                "https://www.iut-acy.univ-smb.fr/\n",
+                "IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux",
+                "https://www.iut-acy.univ-smb.fr/",
                 "Studied Computer Science");
 
         educations.add(education1);
