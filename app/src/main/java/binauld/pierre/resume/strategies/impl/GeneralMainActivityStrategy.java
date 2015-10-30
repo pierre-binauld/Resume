@@ -111,6 +111,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the skills fragment.
      */
     private void switchToSkillsFragment() {
+        ListFragment educationFragment = new ListFragment();
+        switchFragment(educationFragment);
 
     }
 
@@ -118,6 +120,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the tech skills fragment.
      */
     private void switchToTechSkillsFragment() {
+        ListFragment educationFragment = new ListFragment();
+        switchFragment(educationFragment);
     }
 
 
@@ -125,6 +129,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the experiences fragment.
      */
     private void switchToExperiencesFragment() {
+        ListFragment educationFragment = new ListFragment();
+        switchFragment(educationFragment);
     }
 
 
@@ -132,6 +138,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the miscellaneous fragment.
      */
     private void switchToMiscFragment() {
+        ListFragment educationFragment = new ListFragment();
+        switchFragment(educationFragment);
     }
 
     /**
