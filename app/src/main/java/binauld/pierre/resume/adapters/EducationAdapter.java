@@ -68,8 +68,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
         holder.primaryTitle.setText(education.getSchool());
         holder.primarySubtitle.setText(education.getField());
 
-//        holder.action1.setTag(education.getPlace());
-//        holder.action2.setTag(education.getWebPage());
+        holder.action1.setTag(education.getPlace());
+        holder.action2.setTag(education.getWebPage());
     }
 
     @Override
