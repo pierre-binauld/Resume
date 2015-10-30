@@ -7,6 +7,9 @@ import android.graphics.Paint;
 
 import com.squareup.picasso.Transformation;
 
+/**
+ * Transform Bitmap source into a circle Bitmap.
+ */
 public class CircleTransformation implements Transformation {
 
     @Override

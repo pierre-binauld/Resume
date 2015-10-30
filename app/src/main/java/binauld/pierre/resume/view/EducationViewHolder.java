@@ -10,6 +10,9 @@ import binauld.pierre.resume.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * Hold view for education list item.
+ */
 public class EducationViewHolder extends RecyclerView.ViewHolder {
 
     @Bind(R.id.card_rich_media)

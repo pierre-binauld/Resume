@@ -17,6 +17,9 @@ import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Education;
 import binauld.pierre.resume.view.EducationViewHolder;
 
+/**
+ * A RecyclerView Adaptater for a list displaying education item.
+ */
 public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> {
 
     private Context context;
@@ -65,8 +68,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
         holder.primaryTitle.setText(education.getSchool());
         holder.primarySubtitle.setText(education.getField());
 
-        holder.action1.setTag(education.getPlace());
-        holder.action2.setTag(education.getWebPage());
+//        holder.action1.setTag(education.getPlace());
+//        holder.action2.setTag(education.getWebPage());
     }
 
     @Override

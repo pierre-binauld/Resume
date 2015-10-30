@@ -7,9 +7,9 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
+import binauld.pierre.resume.factories.MainActivityStrategyFactory;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
-import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
 
 public class MainActivity extends AppCompatActivity {
 

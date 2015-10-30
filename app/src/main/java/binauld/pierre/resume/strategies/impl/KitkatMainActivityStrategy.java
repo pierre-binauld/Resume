@@ -10,6 +10,12 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
+
+/**
+ * The kitkat strategy for the main activity.
+ * His role is to use the tint manager used when Kitkat.
+ * This strategy is a decorator for other strategy.
+ */
 public class KitkatMainActivityStrategy implements MainActivityStrategy {
 
     private MainActivityStrategy strategy;

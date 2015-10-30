@@ -18,6 +18,10 @@ import binauld.pierre.resume.strategies.MainActivityStrategy;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * The general strategy for the main activity.
+ * His role is to set the toolbar and manage fragments.
+ */
 public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
     private AppCompatActivity activity;
@@ -57,7 +61,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         activity.setSupportActionBar(toolbar);
 
         drawer.setNavigationItemSelectedListener(this);
-        loadEducationFragment();
+        switchToEducationFragment();
     }
 
     @Override
@@ -65,19 +69,19 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
         switch (menuItem.getItemId()) {
             case R.id.nav_item_education:
-                loadEducationFragment();
+                switchToEducationFragment();
                 break;
             case R.id.nav_item_skills:
-                loadSkillsFragment();
+                switchToSkillsFragment();
                 break;
             case R.id.nav_item_tech_skills:
-                loadTechSkillsFragment();
+                switchToTechSkillsFragment();
                 break;
             case R.id.nav_item_experiences:
-                loadExperiencesFragment();
+                switchToExperiencesFragment();
                 break;
             case R.id.nav_item_misc:
-                loadMiscFragment();
+                switchToMiscFragment();
                 break;
             default:
                 return false;
@@ -88,7 +92,10 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         return true;
     }
 
-    private void loadEducationFragment() {
+    /**
+     * Switch to the education fragment.
+     */
+    private void switchToEducationFragment() {
         ListFragment educationFragment = new ListFragment();
         EducationAdapter adapter = new EducationAdapter(
                 activity,
@@ -100,19 +107,37 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         switchFragment(educationFragment);
     }
 
-    private void loadSkillsFragment() {
+    /**
+     * Switch to the skills fragment.
+     */
+    private void switchToSkillsFragment() {
 
     }
 
-    private void loadTechSkillsFragment() {
+    /**
+     * Switch to the tech skills fragment.
+     */
+    private void switchToTechSkillsFragment() {
     }
 
-    private void loadExperiencesFragment() {
+
+    /**
+     * Switch to the experiences fragment.
+     */
+    private void switchToExperiencesFragment() {
     }
 
-    private void loadMiscFragment() {
+
+    /**
+     * Switch to the miscellaneous fragment.
+     */
+    private void switchToMiscFragment() {
     }
 
+    /**
+     * Switch to another fragment.
+     * @param newFragment The fragment to switch on.
+     */
     private void switchFragment(Fragment newFragment) {
         FragmentTransaction transaction = activity.getFragmentManager().beginTransaction();
 

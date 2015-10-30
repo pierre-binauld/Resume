@@ -20,6 +20,11 @@ import binauld.pierre.resume.view.transformations.CircleTransformation;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * The normal screen strategy for the main activity.
+ * His role is to initialize the drawer layout and manage it.
+ * This strategy is a decorator for other strategy.
+ */
 public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
 
     private MainActivityStrategy strategy;

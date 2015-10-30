@@ -6,6 +6,9 @@ import android.support.v7.widget.RecyclerView;
 
 import binauld.pierre.resume.factories.LayoutManagerFactory;
 
+/**
+ * Create a RecyclerView LinearLayoutManager.
+ */
 public class LinearLayoutManagerFactory implements LayoutManagerFactory {
 
     @Override

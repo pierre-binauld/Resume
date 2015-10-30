@@ -8,14 +8,14 @@ import javax.inject.Singleton;
 
 import binauld.pierre.resume.activities.MainActivity;
 import binauld.pierre.resume.factories.LayoutManagerFactory;
+import binauld.pierre.resume.factories.MainActivityStrategyFactory;
+import binauld.pierre.resume.factories.impl.GeneralMainActivityStrategyFactory;
+import binauld.pierre.resume.factories.impl.KitkatMainActivityStrategyFactory;
 import binauld.pierre.resume.factories.impl.LinearLayoutManagerFactory;
+import binauld.pierre.resume.factories.impl.NormalScreenMainActivityStrategyFactory;
 import binauld.pierre.resume.factories.impl.StaggeredGridLayoutManagerFactory;
 import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.model.Account;
-import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
-import binauld.pierre.resume.strategies.factory.impl.GeneralMainActivityStrategyFactory;
-import binauld.pierre.resume.strategies.factory.impl.KitkatMainActivityStrategyFactory;
-import binauld.pierre.resume.strategies.factory.impl.NormalScreenMainActivityStrategyFactory;
 import dagger.Module;
 import dagger.Provides;
 
@@ -36,7 +36,10 @@ public class ApplicationModule {
         this.context = context;
     }
 
-
+    /**
+     * Provides a MainActivityStrategyFactory depending on screen size and build version.
+     * @return a MainActivityStrategyFactory.
+     */
     @Provides
     public MainActivityStrategyFactory provideMainActivityStrategyFactory() {
 
@@ -66,7 +69,7 @@ public class ApplicationModule {
     }
 
     /**
-     * Provide the current account use by the app.
+     * Provides the current account use by the app.
      * @return The account.
      */
     @Provides @Singleton
@@ -74,6 +77,11 @@ public class ApplicationModule {
         return new Account(context.getResources());
     }
 
+
+    /**
+     * Provides a LayoutManagerFactory depending on screen size and orientation.
+     * @return A StaggeredGridLayoutManagerFactory for large landscape screen or a LinearLayoutManagerFactory otherwise.
+     */
     @Provides
     public LayoutManagerFactory provideLayoutManager() {
         int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
