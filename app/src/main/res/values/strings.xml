@@ -19,4 +19,7 @@
     <string name="nav_item_experiences">Experiences</string>
     <string name="nav_item_misc">Miscellaneous</string>
 
+    <string name="message_error_no_web_page">No web page available</string>
+    <string name="message_error_no_location">No location available</string>
+
 </resources>
