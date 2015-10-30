@@ -9,6 +9,8 @@
 
     <item name="divider" format="float" type="fraction" >0.10</item>
 
+    <item name="ratio_16_9" format="fraction" type="fraction" >178%</item>
+
     <item name="white_on_dark_primary"   format="float" type="fraction" >1.00</item>
     <item name="white_on_dark_secondary" format="float" type="fraction" >0.70</item>
     <item name="white_on_dark_hint"      format="float" type="fraction" >0.30</item>

@@ -2,8 +2,6 @@
 <resources>
     <dimen name="activity_margin">64dp</dimen>
 
-    <dimen name="drawer_width">250dp</dimen>
-
     <dimen name="card_margin_small">12dp</dimen>
 
     <dimen name="list_margin_horizontal_small">52dp</dimen>

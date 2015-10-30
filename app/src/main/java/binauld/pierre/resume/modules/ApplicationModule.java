@@ -7,6 +7,10 @@ import android.os.Build;
 import javax.inject.Singleton;
 
 import binauld.pierre.resume.activities.MainActivity;
+import binauld.pierre.resume.factories.LayoutManagerFactory;
+import binauld.pierre.resume.factories.impl.LinearLayoutManagerFactory;
+import binauld.pierre.resume.factories.impl.StaggeredGridLayoutManagerFactory;
+import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.factory.MainActivityStrategyFactory;
 import binauld.pierre.resume.strategies.factory.impl.GeneralMainActivityStrategyFactory;
@@ -20,7 +24,8 @@ import dagger.Provides;
  */
 @Module(
         injects = {
-                MainActivity.class
+                MainActivity.class,
+                ListFragment.class
         }
 )
 public class ApplicationModule {
@@ -67,5 +72,22 @@ public class ApplicationModule {
     @Provides @Singleton
     public Account provideAccount() {
         return new Account(context.getResources());
+    }
+
+    @Provides @Singleton
+    public LayoutManagerFactory provideLayoutManager() {
+        int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+        int orientation = context.getResources().getConfiguration().orientation;
+
+        LayoutManagerFactory factory = new LinearLayoutManagerFactory();
+
+        if ((screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE) &&
+                orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            factory = new StaggeredGridLayoutManagerFactory();
+        } else {
+            factory = new LinearLayoutManagerFactory();
+        }
+
+        return factory;
     }
 }

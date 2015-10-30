@@ -4,6 +4,11 @@
     android:id="@+id/fragment_list_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/list_margin_vertical_small"
+    android:paddingBottom="@dimen/list_margin_vertical_small"
+    android:paddingLeft="@dimen/list_margin_horizontal_small"
+    android:paddingRight="@dimen/list_margin_horizontal_small"
+    android:clipToPadding="false"
     tools:context="binauld.pierre.resume.fragments.ListFragment">
 
 </android.support.v7.widget.RecyclerView>

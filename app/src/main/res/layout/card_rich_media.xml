@@ -11,6 +11,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_widthPercent="100%"
-        app:layout_aspectRatio="178%"/>
+        app:layout_aspectRatio="@fraction/ratio_16_9"/>
 
 </android.support.percent.PercentRelativeLayout>

@@ -30,7 +30,7 @@ public class Account {
                 "Polytech Lyon",
                 "Polytech Lyon, 15 Boulevard André Latarget, 69100 Villeurbanne",
                 "http://polytech.univ-lyon1.fr/",
-                "IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux");
+                "Studied Computer Science");
         Education education2 = new Education(
                 R.drawable.iut_annecy,
                 "IUT Annecy",
