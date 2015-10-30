@@ -74,12 +74,12 @@ public class ApplicationModule {
         return new Account(context.getResources());
     }
 
-    @Provides @Singleton
+    @Provides
     public LayoutManagerFactory provideLayoutManager() {
         int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
         int orientation = context.getResources().getConfiguration().orientation;
 
-        LayoutManagerFactory factory = new LinearLayoutManagerFactory();
+        LayoutManagerFactory factory;
 
         if ((screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE) &&
                 orientation == Configuration.ORIENTATION_LANDSCAPE) {
