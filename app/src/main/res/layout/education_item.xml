@@ -12,9 +12,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <include layout="@layout/card_rich_media" />
+
         <include layout="@layout/card_primary_title_start" />
 
-        <include layout="@layout/card_rich_media" />
+        <include layout="@layout/divider" />
 
         <include layout="@layout/card_action_icon_2" />
 
