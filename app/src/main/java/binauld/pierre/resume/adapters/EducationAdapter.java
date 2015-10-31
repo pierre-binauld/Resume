@@ -63,6 +63,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
         Picasso
                 .with(context)
                 .load(education.getPicture())
+                .fit()
+                .centerCrop()
                 .into(holder.picture);
 
         holder.primaryTitle.setText(education.getSchool());
