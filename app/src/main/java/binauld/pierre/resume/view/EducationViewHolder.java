@@ -11,7 +11,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Hold view for education list item.
+ * Hold views for education list item.
  */
 public class EducationViewHolder extends RecyclerView.ViewHolder {
 

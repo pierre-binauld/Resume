@@ -37,9 +37,16 @@ public class Account {
                 "IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux",
                 "https://www.iut-acy.univ-smb.fr/",
                 "Studied Computer Science");
+        Education education3 = new Education(
+                R.drawable.lycee_louis_lachenal,
+                "Lycée Louis Lachenal",
+                "School Louis Lachenal, 335 Route de Champ Farcon, 74370 Argonay",
+                "http://www.lycee-louis-lachenal.fr/",
+                "Scientist baccalaureate diploma with honours");
 
         educations.add(education1);
         educations.add(education2);
+        educations.add(education3);
 
     }
 
@@ -67,7 +74,7 @@ public class Account {
         return picturePanorama;
     }
 
-    public List<Education> getEducation() {
+    public List<Education> getEducations() {
         return educations;
     }
 }
