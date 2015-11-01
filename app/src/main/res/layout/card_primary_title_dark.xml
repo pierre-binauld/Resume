@@ -20,7 +20,7 @@
         android:id="@+id/card_primary_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Body1"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white_on_dark_secondary"/>
 
 </LinearLayout>
