@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_content">
+
+    <ImageView
+        android:id="@+id/card_date_range_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_calendar"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+    <TextView
+        android:id="@+id/card_date_range_label_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/card_date_range_icon"
+        android:layout_toEndOf="@id/card_date_range_icon"
+        android:layout_marginStart="@dimen/spacing_content"
+        android:layout_marginLeft="@dimen/spacing_content"
+        android:layout_marginBottom="@dimen/spacing_content"
+        android:text="@string/experience_date_range_start"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/dark_on_light_secondary" />
+
+    <TextView
+        android:id="@+id/card_date_range_text_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/card_date_range_label_start"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/dark_on_light_secondary" />
+
+    <TextView
+        android:id="@+id/card_date_range_label_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_date_range_label_start"
+        android:layout_alignLeft="@id/card_date_range_label_start"
+        android:layout_alignStart="@id/card_date_range_label_start"
+        android:text="@string/experience_date_range_end"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/dark_on_light_secondary"/>
+
+    <TextView
+        android:id="@+id/card_date_range_text_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/card_date_range_label_end"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/dark_on_light_secondary"/>
+
+</RelativeLayout>

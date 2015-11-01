@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.adapters.EducationAdapter;
+import binauld.pierre.resume.adapters.ExperienceAdapter;
 import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
@@ -96,32 +97,31 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the education fragment.
      */
     private void switchToEducationFragment() {
-        ListFragment educationFragment = new ListFragment();
+        ListFragment fragment = new ListFragment();
         EducationAdapter adapter = new EducationAdapter(
                 activity,
-                account.getEducation(),
+                account.getEducations(),
                 locationListener,
                 browserListener
         );
-        educationFragment.setAdapter(adapter);
-        switchFragment(educationFragment);
+        fragment.setAdapter(adapter);
+        switchFragment(fragment);
     }
 
     /**
      * Switch to the skills fragment.
      */
     private void switchToSkillsFragment() {
-        ListFragment educationFragment = new ListFragment();
-        switchFragment(educationFragment);
-
+        ListFragment fragment = new ListFragment();
+        switchFragment(fragment);
     }
 
     /**
      * Switch to the tech skills fragment.
      */
     private void switchToTechSkillsFragment() {
-        ListFragment educationFragment = new ListFragment();
-        switchFragment(educationFragment);
+        ListFragment fragment = new ListFragment();
+        switchFragment(fragment);
     }
 
 
@@ -129,8 +129,15 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the experiences fragment.
      */
     private void switchToExperiencesFragment() {
-        ListFragment educationFragment = new ListFragment();
-        switchFragment(educationFragment);
+        ListFragment fragment = new ListFragment();
+        ExperienceAdapter adapter = new ExperienceAdapter(
+                activity,
+                account.getExperiences()
+        );
+        adapter.setLocationListener(locationListener);
+        adapter.setBrowserListener(browserListener);
+        fragment.setAdapter(adapter);
+        switchFragment(fragment);
     }
 
 

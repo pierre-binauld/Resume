@@ -15,6 +15,7 @@ public class Account {
     private String lastName;
     private String email;
     private List<Education> educations = new ArrayList<>();
+    private List<Experience> experiences;
 
     public Account(Resources res) {
 
@@ -48,6 +49,9 @@ public class Account {
         educations.add(education2);
         educations.add(education3);
 
+        experiences = Account.buildExperiences();
+
+
     }
 
     public int getPictureAccount() {
@@ -76,6 +80,51 @@ public class Account {
 
     public List<Education> getEducations() {
         return educations;
+    }
+
+    public List<Experience> getExperiences() {
+        return experiences;
+    }
+
+    private static List<Experience> buildExperiences() {
+
+        List<Experience> experiences = new ArrayList<>();
+
+        Experience experience1 = new Experience(
+                "Intern as J2E developer",
+                "Micropole",
+                "Mar. 2015",
+                "Sep. 2015",
+                R.drawable.micropole
+        );
+        experience1.setLocation("Micropole Rhone Alpes, 4 Place Charles Hernu, 69100 Villeurbanne");
+        experience1.setWebPage("http://www.micropole.com/");
+
+        Experience experience2 = new Experience(
+                "Intern as J2E developer",
+                "ATOS Worldline",
+                "Sep. 2013",
+                "Jan. 2014",
+                R.drawable.worldline
+        );
+        experience2.setLocation("Atrium Lyon Part Dieu 107-109 boulevard Vivier Merle 69438 LYON CEDEX 03");
+        experience2.setWebPage("http://worldline.com/");
+
+        Experience experience3 = new Experience(
+                "Intern as Web developer",
+                "NTN-SNR",
+                "Apr. 2012",
+                "Jun. 2012",
+                R.drawable.snr
+        );
+        experience3.setLocation("NTN-SNR ROULEMENTS, 1 Rue des Usines, 74010 Annecy Cedex");
+        experience3.setWebPage("http://www.ntn-snr.com/");
+
+        experiences.add(experience1);
+        experiences.add(experience2);
+        experiences.add(experience3);
+
+        return experiences;
     }
 }
 
