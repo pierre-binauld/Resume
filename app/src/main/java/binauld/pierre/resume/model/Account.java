@@ -14,7 +14,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Education> educations = new ArrayList<>();
+    private List<Education> educations;
     private List<Experience> experiences;
 
     public Account(Resources res) {
@@ -26,28 +26,7 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        Education education1 = new Education(
-                R.drawable.polytech_lyon,
-                "Polytech Lyon",
-                "Polytech Lyon, 15 Boulevard André Latarget, 69100 Villeurbanne",
-                "http://polytech.univ-lyon1.fr/",
-                "Studied Computer Science");
-        Education education2 = new Education(
-                R.drawable.iut_annecy,
-                "IUT Annecy",
-                "IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux",
-                "https://www.iut-acy.univ-smb.fr/",
-                "Studied Computer Science");
-        Education education3 = new Education(
-                R.drawable.lycee_louis_lachenal,
-                "Lycée Louis Lachenal",
-                "School Louis Lachenal, 335 Route de Champ Farcon, 74370 Argonay",
-                "http://www.lycee-louis-lachenal.fr/",
-                "Scientist baccalaureate diploma with honours");
-
-        educations.add(education1);
-        educations.add(education2);
-        educations.add(education3);
+        educations = buildEducations();
 
         experiences = Account.buildExperiences();
 
@@ -125,6 +104,44 @@ public class Account {
         experiences.add(experience3);
 
         return experiences;
+    }
+
+    private static List<Education> buildEducations() {
+
+        List<Education> educations = new ArrayList<>();
+
+        Education education1 = new Education(
+                R.drawable.polytech_lyon,
+                "Polytech Lyon",
+                "Studied Computer Science",
+                "2012",
+                "2015");
+        education1.setWebPage("http://polytech.univ-lyon1.fr/");
+        education1.setLocation("Polytech Lyon, 15 Boulevard André Latarget, 69100 Villeurbanne");
+
+        Education education2 = new Education(
+                R.drawable.iut_annecy,
+                "IUT Annecy",
+                "Studied Computer Science",
+                "2010",
+                "2012");
+        education1.setWebPage("https://www.iut-acy.univ-smb.fr/");
+        education1.setLocation("IUT Annecy, Rue de l'Arc en Ciel, Annecy-le-Vieux");
+
+        Education education3 = new Education(
+                R.drawable.lycee_louis_lachenal,
+                "Lycée Louis Lachenal",
+                "Scientist baccalaureate diploma with honours",
+                "2007",
+                "2010");
+        education1.setWebPage("http://www.lycee-louis-lachenal.fr/");
+        education1.setLocation("School Louis Lachenal, 335 Route de Champ Farcon, 74370 Argonay");
+
+        educations.add(education1);
+        educations.add(education2);
+        educations.add(education3);
+
+        return educations;
     }
 }
 

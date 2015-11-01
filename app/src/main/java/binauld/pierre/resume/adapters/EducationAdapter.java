@@ -41,6 +41,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
 
         EducationViewHolder holder = new EducationViewHolder(v);
 
+        holder.dateRangeEndLabel.setText(R.string.education_date_range_end);
+
         holder.action1.setOnClickListener(locationListener);
         Picasso
                 .with(context)
@@ -67,10 +69,12 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
                 .centerCrop()
                 .into(holder.picture);
 
-        holder.primaryTitle.setText(education.getSchool());
-        holder.primarySubtitle.setText(education.getField());
+        holder.primaryTitle.setText(    education.getSchool());
+        holder.primarySubtitle.setText( education.getField());
+        holder.dateRangeStart.setText(  education.getStart());
+        holder.dateRangeEnd.setText(    education.getEnd());
 
-        holder.action1.setTag(education.getPlace());
+        holder.action1.setTag(education.getLocation());
         holder.action2.setTag(education.getWebPage());
     }
 

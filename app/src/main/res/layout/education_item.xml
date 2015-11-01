@@ -16,6 +16,8 @@
 
         <include layout="@layout/card_primary_title_start" />
 
+        <include layout="@layout/card_date_range" />
+
         <include layout="@layout/divider" />
 
         <include layout="@layout/card_action_icon_2" />

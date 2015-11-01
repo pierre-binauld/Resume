@@ -24,6 +24,15 @@ public class EducationViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.card_primary_subtitle)
     public TextView primarySubtitle;
 
+    @Bind(R.id.card_date_range_label_end)
+    public TextView dateRangeEndLabel;
+
+    @Bind(R.id.card_date_range_text_start)
+    public TextView dateRangeStart;
+
+    @Bind(R.id.card_date_range_text_end)
+    public TextView dateRangeEnd;
+
     @Bind(R.id.card_action_1)
     public ImageButton action1;
 

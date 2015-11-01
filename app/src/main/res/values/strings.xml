@@ -25,4 +25,6 @@
     <string name="experience_date_range_start">Start</string>
     <string name="experience_date_range_end">End</string>
 
+    <string name="education_date_range_end">Graduated</string>
+
 </resources>
