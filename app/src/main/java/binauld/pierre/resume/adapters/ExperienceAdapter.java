@@ -34,7 +34,7 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceViewHolder
 
     @Override
     public ExperienceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.experience_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_experience, parent, false);
 
         ExperienceViewHolder holder = new ExperienceViewHolder(v);
 
