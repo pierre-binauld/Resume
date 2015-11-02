@@ -14,6 +14,7 @@ import binauld.pierre.resume.R;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Experience;
+import binauld.pierre.resume.model.TechnicalSkill;
 import binauld.pierre.resume.view.ExperienceViewHolder;
 
 /**
@@ -63,10 +64,14 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceViewHolder
                 .centerCrop()
                 .into(holder.picture);
 
-        holder.primaryTitle.setText(    experience.getPosition());
+        holder.primaryTitle.setText(experience.getPosition());
         holder.primarySubtitle.setText( experience.getCompany() );
-        holder.dateRangeStart.setText(  experience.getStart()   );
-        holder.dateRangeEnd.setText(    experience.getEnd()     );
+        holder.dateRangeStart.setText(experience.getStart());
+        holder.dateRangeEnd.setText(experience.getEnd());
+
+        for (TechnicalSkill technicalSkill : experience.getTechnicalSkills()) {
+            holder.chipsContainer.addChips(technicalSkill.getName(), technicalSkill.getPicture());
+        }
 
         holder.action1.setTag(experience.getLocation());
         holder.action2.setTag(experience.getWebPage());

@@ -29,8 +29,6 @@ public class Account {
         educations = buildEducations();
 
         experiences = Account.buildExperiences();
-
-
     }
 
     public int getPictureAccount() {
@@ -78,6 +76,12 @@ public class Account {
         );
         experience1.setLocation("Micropole Rhone Alpes, 4 Place Charles Hernu, 69100 Villeurbanne");
         experience1.setWebPage("http://www.micropole.com/");
+        experience1.addTechnicalSkill(new TechnicalSkill("Liferay", R.drawable.liferay));
+        experience1.addTechnicalSkill(new TechnicalSkill("Java", R.drawable.java));
+        experience1.addTechnicalSkill(new TechnicalSkill("Javascript", R.drawable.javascript));
+        experience1.addTechnicalSkill(new TechnicalSkill("SQL"));
+        experience1.addTechnicalSkill(new TechnicalSkill("Git", R.drawable.git));
+        experience1.addTechnicalSkill(new TechnicalSkill("Eclipse", R.drawable.eclipse));
 
         Experience experience2 = new Experience(
                 "Intern as J2E developer",
@@ -88,6 +92,15 @@ public class Account {
         );
         experience2.setLocation("Atrium Lyon Part Dieu 107-109 boulevard Vivier Merle 69438 LYON CEDEX 03");
         experience2.setWebPage("http://worldline.com/");
+        experience2.addTechnicalSkill(new TechnicalSkill("J2EE", R.drawable.j2ee));
+        experience2.addTechnicalSkill(new TechnicalSkill("Spring", R.drawable.spring));
+        experience2.addTechnicalSkill(new TechnicalSkill("Hibernate", R.drawable.hibernate));
+        experience2.addTechnicalSkill(new TechnicalSkill("Tapestry", R.drawable.tapestry));
+        experience2.addTechnicalSkill(new TechnicalSkill("Javascript", R.drawable.javascript));
+        experience2.addTechnicalSkill(new TechnicalSkill("JUnit"));
+        experience2.addTechnicalSkill(new TechnicalSkill("SQL"));
+        experience2.addTechnicalSkill(new TechnicalSkill("Jenkins", R.drawable.jenkins));
+        experience2.addTechnicalSkill(new TechnicalSkill("Git", R.drawable.git));
 
         Experience experience3 = new Experience(
                 "Intern as Web developer",
@@ -98,6 +111,10 @@ public class Account {
         );
         experience3.setLocation("NTN-SNR ROULEMENTS, 1 Rue des Usines, 74010 Annecy Cedex");
         experience3.setWebPage("http://www.ntn-snr.com/");
+        experience3.addTechnicalSkill(new TechnicalSkill("PHP", R.drawable.php));
+        experience3.addTechnicalSkill(new TechnicalSkill("Zend Framework", R.drawable.zend));
+        experience3.addTechnicalSkill(new TechnicalSkill("Javascript", R.drawable.javascript));
+        experience3.addTechnicalSkill(new TechnicalSkill("SQL"));
 
         experiences.add(experience1);
         experiences.add(experience2);

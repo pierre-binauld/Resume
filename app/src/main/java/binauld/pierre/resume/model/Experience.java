@@ -1,6 +1,9 @@
 package binauld.pierre.resume.model;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Experience {
 
     private int picture;
@@ -10,6 +13,7 @@ public class Experience {
     private String location;
     private String start;
     private String end;
+    private List<TechnicalSkill> technicalSkills = new ArrayList<>();
 
     public Experience(String position, String company, String start, String end, int picture) {
         this.position = position;
@@ -32,7 +36,6 @@ public class Experience {
     }
 
     public String getPosition() {
-
         return position;
     }
 
@@ -54,5 +57,13 @@ public class Experience {
 
     public String getEnd() {
         return end;
+    }
+
+    public List<TechnicalSkill> getTechnicalSkills() {
+        return technicalSkills;
+    }
+
+    public void addTechnicalSkill(TechnicalSkill technicalSkill) {
+        technicalSkills.add(technicalSkill);
     }
 }

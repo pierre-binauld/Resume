@@ -18,6 +18,8 @@
 
         <include layout="@layout/card_date_range" />
 
+        <include layout="@layout/card_chips_container" />
+
         <include layout="@layout/divider" />
 
         <include layout="@layout/card_action_icon_2" />

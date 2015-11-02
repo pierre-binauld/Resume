@@ -30,6 +30,9 @@ public class ExperienceViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.card_date_range_text_end)
     public TextView dateRangeEnd;
 
+    @Bind(R.id.card_chips_container)
+    public ChipsContainer chipsContainer;
+
     @Bind(R.id.card_action_1)
     public ImageButton action1;
 
