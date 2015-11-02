@@ -1,15 +1,15 @@
 package binauld.pierre.resume.model;
 
-public class TechnicalSkill {
+public class Skill {
 
     private int picture = 0;
     private String name;
 
-    public TechnicalSkill(String name) {
+    public Skill(String name) {
         this.name = name;
     }
 
-    public TechnicalSkill(String name, int picture) {
+    public Skill(String name, int picture) {
         this.picture = picture;
         this.name = name;
     }

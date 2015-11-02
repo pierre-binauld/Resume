@@ -13,7 +13,7 @@ public class Experience {
     private String location;
     private String start;
     private String end;
-    private List<TechnicalSkill> technicalSkills = new ArrayList<>();
+    private List<Skill> skills = new ArrayList<>();
 
     public Experience(String position, String company, String start, String end, int picture) {
         this.position = position;
@@ -59,11 +59,11 @@ public class Experience {
         return end;
     }
 
-    public List<TechnicalSkill> getTechnicalSkills() {
-        return technicalSkills;
+    public List<Skill> getSkills() {
+        return skills;
     }
 
-    public void addTechnicalSkill(TechnicalSkill technicalSkill) {
-        technicalSkills.add(technicalSkill);
+    public void addTechnicalSkill(Skill skill) {
+        skills.add(skill);
     }
 }

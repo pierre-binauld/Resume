@@ -10,14 +10,9 @@
             android:title="@string/nav_item_education" />
         <item
             android:id="@+id/nav_item_skills"
-            android:icon="@drawable/ic_box"
+            android:icon="@drawable/ic_tool"
             android:title="@string/nav_item_skills"
             android:enabled="false"/>
-        <item
-            android:id="@+id/nav_item_tech_skills"
-            android:icon="@drawable/ic_tool"
-            android:title="@string/nav_item_tech_skills"
-            android:enabled="false" />
         <item
             android:id="@+id/nav_item_experiences"
             android:icon="@drawable/ic_briefcase"

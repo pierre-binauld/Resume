@@ -100,9 +100,6 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
             case R.id.nav_item_skills:
                 switchToSkillsFragment();
                 break;
-            case R.id.nav_item_tech_skills:
-                switchToTechSkillsFragment();
-                break;
             case R.id.nav_item_experiences:
                 switchToExperiencesFragment();
                 break;
@@ -138,14 +135,6 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the skills fragment.
      */
     private void switchToSkillsFragment() {
-        ListFragment fragment = new ListFragment();
-        switchFragment(fragment);
-    }
-
-    /**
-     * Switch to the tech skills fragment.
-     */
-    private void switchToTechSkillsFragment() {
         ListFragment fragment = new ListFragment();
         switchFragment(fragment);
     }
