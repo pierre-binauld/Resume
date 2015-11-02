@@ -31,4 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         strategy.onCreate(savedInstanceState);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        strategy.onSaveInstanceState(savedInstanceState);
+    }
 }

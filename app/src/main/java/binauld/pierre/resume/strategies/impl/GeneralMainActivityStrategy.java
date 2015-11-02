@@ -25,12 +25,16 @@ import butterknife.ButterKnife;
  */
 public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
+    public static final String CURRENT_MENU_ITEM_ID = "currentMenuItemId";
+
     private AppCompatActivity activity;
 
     private Account account;
 
     private LocationListener locationListener;
     private BrowserListener  browserListener;
+
+    private int currentMenuItemId;
 
     @Bind(R.id.toolbar)
     public Toolbar toolbar;
@@ -61,9 +65,21 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     public void onCreate(Bundle savedInstanceState) {
         activity.setSupportActionBar(toolbar);
 
-        drawer.setNavigationItemSelectedListener(this);
+        if (savedInstanceState != null) {
+            currentMenuItemId = savedInstanceState.getInt(CURRENT_MENU_ITEM_ID);
+        } else {
+            currentMenuItemId = drawer.getMenu().getItem(0).getItemId();
+        }
 
-//        switchToEducationFragment();
+        drawer.setNavigationItemSelectedListener(this);
+        MenuItem item = drawer.getMenu().findItem(currentMenuItemId);
+        item.setChecked(true);
+        onNavigationItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(CURRENT_MENU_ITEM_ID, currentMenuItemId);
     }
 
     @Override
@@ -89,6 +105,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
                 return false;
         }
 
+        currentMenuItemId = menuItem.getItemId();
         activity.setTitle(menuItem.getTitle());
 
         return true;

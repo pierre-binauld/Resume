@@ -105,6 +105,11 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        strategy.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         if (strategy.onNavigationItemSelected(menuItem)) {
             drawerLayout.closeDrawer(GravityCompat.START);

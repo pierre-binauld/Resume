@@ -29,4 +29,6 @@ public interface MainActivityStrategy extends NavigationView.OnNavigationItemSel
      * @param savedInstanceState The savedInstanceState of the activity onCreate method.
      */
     void onCreate(Bundle savedInstanceState);
+
+    void onSaveInstanceState(Bundle savedInstanceState);
 }

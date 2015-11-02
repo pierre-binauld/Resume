@@ -47,6 +47,11 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        strategy.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         return strategy.onNavigationItemSelected(menuItem);
     }
