@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Chips">
+        <attr name="text"    format="string" />
+        <attr name="picture" format="integer" />
+    </declare-styleable>
+</resources>

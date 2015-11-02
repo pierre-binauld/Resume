@@ -4,6 +4,14 @@
     <dimen name="card_corner_radius">2dp</dimen>
     <dimen name="card_margin_small">8dp</dimen>
 
+    <dimen name="chips_height">32dp</dimen>
+    <dimen name="chips_margin">2dp</dimen>
+    <dimen name="chips_picture_size">@dimen/chips_height</dimen>
+    <dimen name="chips_rounded_corner">16dp</dimen>
+    <dimen name="chips_spacing_text">12dp</dimen>
+    <dimen name="chips_spacing_action">4dp</dimen>
+    <dimen name="chips_spacing_picture">8dp</dimen>
+
     <dimen name="list_margin_vertical_small">8dp</dimen>
     <dimen name="list_margin_horizontal_small">8dp</dimen>
 

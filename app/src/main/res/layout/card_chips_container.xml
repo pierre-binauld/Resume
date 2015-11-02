@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<binauld.pierre.resume.view.ChipsContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_chips_container"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_content"/>

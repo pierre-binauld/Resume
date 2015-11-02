@@ -8,6 +8,8 @@
 
     <color name="background">#f5f5f5</color>
 
+    <color name="chips_background">#eeeeee</color>
+
     <color name="drawer_background">#fff</color>
 
     <color name="status_bar_color">#20000000</color>

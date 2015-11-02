@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/chips_picture"
+        android:layout_width="@dimen/chips_picture_size"
+        android:layout_height="@dimen/chips_picture_size"/>
+
+    <TextView
+        android:id="@+id/chips_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/chips_picture_size"
+        android:layout_marginLeft="@dimen/chips_spacing_picture"
+        android:layout_marginStart="@dimen/chips_spacing_picture"
+        android:layout_marginRight="@dimen/chips_spacing_text"
+        android:layout_marginEnd="@dimen/chips_spacing_text"
+        android:gravity="center"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/dark_on_light_secondary"/>
+
+</merge>
