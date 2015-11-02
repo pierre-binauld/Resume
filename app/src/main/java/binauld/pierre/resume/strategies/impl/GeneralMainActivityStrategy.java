@@ -62,7 +62,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
         activity.setSupportActionBar(toolbar);
 
         drawer.setNavigationItemSelectedListener(this);
-        switchToEducationFragment();
+
+//        switchToEducationFragment();
     }
 
     @Override
