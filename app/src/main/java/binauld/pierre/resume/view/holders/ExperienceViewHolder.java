@@ -1,4 +1,4 @@
-package binauld.pierre.resume.view;
+package binauld.pierre.resume.view.holders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import binauld.pierre.resume.R;
+import binauld.pierre.resume.view.ChipsContainer;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 

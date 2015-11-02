@@ -1,4 +1,4 @@
-package binauld.pierre.resume.view;
+package binauld.pierre.resume.view.holders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

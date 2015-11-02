@@ -15,7 +15,7 @@ import binauld.pierre.resume.R;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Education;
-import binauld.pierre.resume.view.EducationViewHolder;
+import binauld.pierre.resume.view.holders.EducationViewHolder;
 
 /**
  * A RecyclerView Adaptater for a list displaying education item.

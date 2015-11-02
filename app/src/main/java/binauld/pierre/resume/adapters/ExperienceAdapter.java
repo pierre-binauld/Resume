@@ -15,7 +15,7 @@ import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Experience;
 import binauld.pierre.resume.model.Skill;
-import binauld.pierre.resume.view.ExperienceViewHolder;
+import binauld.pierre.resume.view.holders.ExperienceViewHolder;
 
 /**
  * A RecyclerView Adaptater for a list displaying experience item.
