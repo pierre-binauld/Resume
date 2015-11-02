@@ -1,7 +1,6 @@
 package binauld.pierre.resume.strategies.impl;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -80,6 +79,15 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt(CURRENT_MENU_ITEM_ID, currentMenuItemId);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (activity.getFragmentManager().getBackStackEntryCount() > 1 ){
+            activity.getFragmentManager().popBackStack();
+        } else {
+            activity.onBackPressed();
+        }
     }
 
     @Override
@@ -172,11 +180,12 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * @param newFragment The fragment to switch on.
      */
     private void switchFragment(Fragment newFragment) {
-        FragmentTransaction transaction = activity.getFragmentManager().beginTransaction();
+        activity.getFragmentManager()
+                .beginTransaction()
 
-        transaction.replace(R.id.content_frame, newFragment);
-        transaction.addToBackStack(null);
+                .replace(R.id.content_frame, newFragment)
+                .addToBackStack(null)
 
-        transaction.commit();
+                .commit();
     }
 }

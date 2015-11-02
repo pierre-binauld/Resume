@@ -52,6 +52,11 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
+    public void onBackPressed() {
+        strategy.onBackPressed();
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         return strategy.onNavigationItemSelected(menuItem);
     }

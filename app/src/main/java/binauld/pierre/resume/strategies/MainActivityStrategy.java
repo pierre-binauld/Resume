@@ -31,4 +31,6 @@ public interface MainActivityStrategy extends NavigationView.OnNavigationItemSel
     void onCreate(Bundle savedInstanceState);
 
     void onSaveInstanceState(Bundle savedInstanceState);
+
+    void onBackPressed();
 }

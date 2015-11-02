@@ -110,6 +110,11 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
+    public void onBackPressed() {
+        strategy.onBackPressed();
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         if (strategy.onNavigationItemSelected(menuItem)) {
             drawerLayout.closeDrawer(GravityCompat.START);

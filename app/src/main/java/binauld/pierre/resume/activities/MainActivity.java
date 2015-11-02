@@ -38,4 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         strategy.onSaveInstanceState(savedInstanceState);
     }
+
+    @Override
+    public void onBackPressed() {
+        strategy.onBackPressed();
+    }
 }
