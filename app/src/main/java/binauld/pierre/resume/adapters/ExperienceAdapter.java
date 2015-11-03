@@ -15,6 +15,7 @@ import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Experience;
 import binauld.pierre.resume.model.Skill;
+import binauld.pierre.resume.tasks.PicassoLoaderTask;
 import binauld.pierre.resume.view.holders.ExperienceViewHolder;
 
 /**
@@ -57,12 +58,14 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceViewHolder
     public void onBindViewHolder(ExperienceViewHolder holder, int position) {
         Experience experience = experiences.get(position);
 
-        Picasso
-                .with(context)
-                .load(experience.getPicture())
-                .fit()
-                .centerCrop()
-                .into(holder.picture);
+
+        new PicassoLoaderTask(context, experience.getPicture(), holder.picture).execute();
+//        Picasso
+//                .with(context)
+//                .load(experience.getPicture())
+//                .fit()
+//                .centerCrop()
+//                .into(holder.picture);
 
         holder.primaryTitle.setText(experience.getPosition());
         holder.primarySubtitle.setText( experience.getCompany() );

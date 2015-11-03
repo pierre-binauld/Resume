@@ -15,6 +15,7 @@ import binauld.pierre.resume.R;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Education;
+import binauld.pierre.resume.tasks.PicassoLoaderTask;
 import binauld.pierre.resume.view.holders.EducationViewHolder;
 
 /**
@@ -60,12 +61,13 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
     public void onBindViewHolder(EducationViewHolder holder, int position) {
         Education education = educations.get(position);
 
-        Picasso
-                .with(context)
-                .load(education.getPicture())
-                .fit()
-                .centerCrop()
-                .into(holder.picture);
+//        Picasso
+//                .with(context)
+//                .load(education.getPicture())
+//                .fit()
+//                .centerCrop()
+//                .into(holder.picture);
+        new PicassoLoaderTask(context, education.getPicture(), holder.picture).execute();
 
         holder.primaryTitle.setText(    education.getSchool());
         holder.primarySubtitle.setText( education.getField());
