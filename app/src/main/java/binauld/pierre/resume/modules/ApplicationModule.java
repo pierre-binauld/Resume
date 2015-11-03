@@ -13,8 +13,12 @@ import binauld.pierre.resume.factories.impl.GeneralMainActivityStrategyFactory;
 import binauld.pierre.resume.factories.impl.KitkatMainActivityStrategyFactory;
 import binauld.pierre.resume.factories.impl.LinearLayoutManagerFactory;
 import binauld.pierre.resume.factories.impl.NormalScreenMainActivityStrategyFactory;
+import binauld.pierre.resume.factories.impl.SmallItemLayoutManagerFactory;
 import binauld.pierre.resume.factories.impl.StaggeredGridLayoutManagerFactory;
 import binauld.pierre.resume.fragments.ListFragment;
+import binauld.pierre.resume.fragments.impl.EducationFragment;
+import binauld.pierre.resume.fragments.impl.ExperienceFragment;
+import binauld.pierre.resume.fragments.impl.SkillFragment;
 import binauld.pierre.resume.model.Account;
 import dagger.Module;
 import dagger.Provides;
@@ -25,7 +29,10 @@ import dagger.Provides;
 @Module(
         injects = {
                 MainActivity.class,
-                ListFragment.class
+                ListFragment.class,
+                EducationFragment.class,
+                ExperienceFragment.class,
+                SkillFragment.class
         }
 )
 public class ApplicationModule {
@@ -94,6 +101,23 @@ public class ApplicationModule {
             factory = new StaggeredGridLayoutManagerFactory();
         } else {
             factory = new LinearLayoutManagerFactory();
+        }
+
+        return factory;
+    }
+
+    @Provides
+    public SmallItemLayoutManagerFactory provideSmallItemLayoutManager() {
+        int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+        int orientation = context.getResources().getConfiguration().orientation;
+
+        SmallItemLayoutManagerFactory factory;
+
+        if ((screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE) &&
+                orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            factory = new SmallItemLayoutManagerFactory(3);
+        } else {
+            factory = new SmallItemLayoutManagerFactory(2);
         }
 
         return factory;

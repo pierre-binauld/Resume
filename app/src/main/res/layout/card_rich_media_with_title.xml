@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/card_rich_media"
+        android:id="@+id/card_picture"
         android:scaleType="centerCrop"
         android:layout_width="0dp"
         android:layout_height="0dp"

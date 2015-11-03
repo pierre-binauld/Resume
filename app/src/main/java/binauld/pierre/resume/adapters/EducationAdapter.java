@@ -27,11 +27,9 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
     private LocationListener locationListener;
     private BrowserListener browserListener;
 
-    public EducationAdapter(Context context, List<Education> educations, LocationListener locationListener, BrowserListener browserListener) {
+    public EducationAdapter(Context context, List<Education> educations) {
         this.context = context;
         this.educations = educations;
-        this.locationListener = locationListener;
-        this.browserListener = browserListener;
     }
 
     @Override
@@ -81,5 +79,13 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationViewHolder> 
     @Override
     public int getItemCount() {
         return educations.size();
+    }
+
+    public void setLocationListener(LocationListener locationListener) {
+        this.locationListener = locationListener;
+    }
+
+    public void setBrowserListener(BrowserListener browserListener) {
+        this.browserListener = browserListener;
     }
 }

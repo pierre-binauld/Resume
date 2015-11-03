@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
  */
 public class ExperienceViewHolder extends RecyclerView.ViewHolder {
 
-    @Bind(R.id.card_rich_media)
+    @Bind(R.id.card_picture)
     public ImageView picture;
 
     @Bind(R.id.card_primary_title)

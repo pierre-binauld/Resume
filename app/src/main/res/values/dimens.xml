@@ -23,10 +23,14 @@
 
     <dimen name="elevation">4dp</dimen>
 
+    <dimen name="button_icon_size">48dp</dimen>
     <dimen name="icon_size">24dp</dimen>
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_spacing_small">4dp</dimen>
 
     <dimen name="spacing_action">8dp</dimen>
     <dimen name="spacing_content">16dp</dimen>
+    <dimen name="spacing_content_small">8dp</dimen>
     <dimen name="spacing_title">24dp</dimen>
 
     <dimen name="toolbar_elevation">@dimen/elevation</dimen>

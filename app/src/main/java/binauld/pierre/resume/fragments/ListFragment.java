@@ -12,22 +12,24 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.factories.LayoutManagerFactory;
+import binauld.pierre.resume.model.Account;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListFragment extends Fragment {
+public abstract class ListFragment extends Fragment {
 
     @Inject
-    protected LayoutManagerFactory layoutManagerFactory;
+    protected Account account;
 
     @Bind(R.id.fragment_list_view)
     protected RecyclerView listView;
 
-    private RecyclerView.Adapter adapter;
+//    private RecyclerView.Adapter adapter;
+//
+//    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,15 +39,22 @@ public class ListFragment extends Fragment {
 
         listView.setHasFixedSize(true);
 
-        RecyclerView.LayoutManager layoutManager = layoutManagerFactory.getLayoutManager(this.getActivity());
-        listView.setLayoutManager(layoutManager);
+        listView.setLayoutManager(buildLayoutManager());
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(buildAdapter());
 
         return view;
     }
 
-    public void setAdapter(RecyclerView.Adapter adapter) {
-        this.adapter = adapter;
-    }
+//    public void setAdapter(RecyclerView.Adapter adapter) {
+//        this.adapter = adapter;
+//    }
+//
+//    public void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
+//        this.layoutManager = layoutManager;
+//    }
+
+    protected abstract RecyclerView.Adapter buildAdapter();
+
+    protected abstract RecyclerView.LayoutManager buildLayoutManager();
 }

@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/card_action_2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/button_icon_size"
+        android:layout_height="@dimen/button_icon_size"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/spacing_action"
@@ -19,8 +19,8 @@
 
     <ImageButton
         android:id="@+id/card_action_1"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/button_icon_size"
+        android:layout_height="@dimen/button_icon_size"
         android:layout_toStartOf="@id/card_action_2"
         android:layout_toLeftOf="@id/card_action_2"
         android:alpha="@fraction/dark_on_light_icon"

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/card_star_1"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginEnd="@dimen/icon_spacing_small"
+        android:layout_marginRight="@dimen/icon_spacing_small"
+        android:src="@drawable/ic_star"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+    <ImageView
+        android:id="@+id/card_star_2"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginEnd="@dimen/icon_spacing_small"
+        android:layout_marginRight="@dimen/icon_spacing_small"
+        android:src="@drawable/ic_star"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+    <ImageView
+        android:id="@+id/card_star_3"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginEnd="@dimen/icon_spacing_small"
+        android:layout_marginRight="@dimen/icon_spacing_small"
+        android:src="@drawable/ic_star"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+    <ImageView
+        android:id="@+id/card_star_4"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginEnd="@dimen/icon_spacing_small"
+        android:layout_marginRight="@dimen/icon_spacing_small"
+        android:src="@drawable/ic_star"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+    <ImageView
+        android:id="@+id/card_star_5"
+        android:layout_width="@dimen/icon_size_small"
+        android:layout_height="@dimen/icon_size_small"
+        android:layout_marginEnd="@dimen/icon_spacing_small"
+        android:layout_marginRight="@dimen/icon_spacing_small"
+        android:src="@drawable/ic_star"
+        android:alpha="@fraction/dark_on_light_icon"/>
+
+</LinearLayout>

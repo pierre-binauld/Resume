@@ -16,6 +16,7 @@ public class Account {
     private String email;
     private List<Education> educations;
     private List<Experience> experiences;
+    private List<Skill> skills;
 
     public Account(Resources res) {
 
@@ -26,9 +27,9 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        educations = buildEducations();
-
+        educations  = Account.buildEducations();
         experiences = Account.buildExperiences();
+        skills      = Account.buildSkills();
     }
 
     public int getPictureAccount() {
@@ -61,6 +62,10 @@ public class Account {
 
     public List<Experience> getExperiences() {
         return experiences;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
     }
 
     private static List<Experience> buildExperiences() {
@@ -159,6 +164,28 @@ public class Account {
         educations.add(education3);
 
         return educations;
+    }
+
+    private static List<Skill> buildSkills() {
+        List<Skill> skills = new ArrayList<>();
+
+        Skill java = new Skill("Java", R.drawable.java);
+        java.setRank(4);
+        skills.add(java);
+
+        Skill android =new Skill("Android", R.drawable.android);
+        android.setRank(3);
+        skills.add(android);
+
+        Skill git =new Skill("Git", R.drawable.git);
+        git.setRank(3);
+        skills.add(git);
+
+        Skill zend =new Skill("Zend", R.drawable.zend);
+        zend.setRank(2);
+        skills.add(zend);
+
+        return skills;
     }
 }
 

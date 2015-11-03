@@ -8,9 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import binauld.pierre.resume.R;
-import binauld.pierre.resume.adapters.EducationAdapter;
-import binauld.pierre.resume.adapters.ExperienceAdapter;
 import binauld.pierre.resume.fragments.ListFragment;
+import binauld.pierre.resume.fragments.impl.EducationFragment;
+import binauld.pierre.resume.fragments.impl.ExperienceFragment;
+import binauld.pierre.resume.fragments.impl.SkillFragment;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Account;
@@ -120,14 +121,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the education fragment.
      */
     private void switchToEducationFragment() {
-        ListFragment fragment = new ListFragment();
-        EducationAdapter adapter = new EducationAdapter(
-                activity,
-                account.getEducations(),
-                locationListener,
-                browserListener
-        );
-        fragment.setAdapter(adapter);
+        ListFragment fragment = new EducationFragment();
         switchFragment(fragment);
     }
 
@@ -135,7 +129,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the skills fragment.
      */
     private void switchToSkillsFragment() {
-        ListFragment fragment = new ListFragment();
+        ListFragment fragment = new SkillFragment();
         switchFragment(fragment);
     }
 
@@ -144,14 +138,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the experiences fragment.
      */
     private void switchToExperiencesFragment() {
-        ListFragment fragment = new ListFragment();
-        ExperienceAdapter adapter = new ExperienceAdapter(
-                activity,
-                account.getExperiences()
-        );
-        adapter.setLocationListener(locationListener);
-        adapter.setBrowserListener(browserListener);
-        fragment.setAdapter(adapter);
+        ListFragment fragment = new ExperienceFragment();
         switchFragment(fragment);
     }
 
@@ -160,8 +147,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the miscellaneous fragment.
      */
     private void switchToMiscFragment() {
-        ListFragment educationFragment = new ListFragment();
-        switchFragment(educationFragment);
+//        ListFragment fragment = new ListFragment();
+//        switchFragment(fragment);
     }
 
     /**
