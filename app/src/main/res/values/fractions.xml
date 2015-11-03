@@ -7,6 +7,8 @@
     <item name="dark_on_light_disabled"  format="float" type="fraction" >@fraction/dark_on_light_hint</item>
     <item name="dark_on_light_icon"      format="float" type="fraction" >@fraction/dark_on_light_hint</item>
 
+    <item name="icon_disabled" format="float" type="fraction" >0.10</item>
+
     <item name="divider" format="float" type="fraction" >0.10</item>
 
     <item name="ratio_16_9" format="fraction" type="fraction" >178%</item>
