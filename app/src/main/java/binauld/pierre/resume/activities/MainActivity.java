@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        strategy.onBackPressed();
+        if ( ! strategy.onBackPressed() ) {
+            super.onBackPressed();
+        }
     }
 }

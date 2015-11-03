@@ -110,8 +110,8 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
-    public void onBackPressed() {
-        strategy.onBackPressed();
+    public boolean onBackPressed() {
+        return strategy.onBackPressed();
     }
 
     @Override

@@ -83,11 +83,12 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onBackPressed() {
         if (activity.getFragmentManager().getBackStackEntryCount() > 1 ){
             activity.getFragmentManager().popBackStack();
+            return true;
         } else {
-            activity.onBackPressed();
+            return false;
         }
     }
 

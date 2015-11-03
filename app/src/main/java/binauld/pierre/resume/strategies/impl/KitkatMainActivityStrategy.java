@@ -52,8 +52,8 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
     }
 
     @Override
-    public void onBackPressed() {
-        strategy.onBackPressed();
+    public boolean onBackPressed() {
+        return strategy.onBackPressed();
     }
 
     @Override
