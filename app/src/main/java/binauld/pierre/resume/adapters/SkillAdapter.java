@@ -1,6 +1,7 @@
 package binauld.pierre.resume.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -9,24 +10,42 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.model.Skill;
+import binauld.pierre.resume.model.SkillCategory;
+import binauld.pierre.resume.view.holders.HeaderViewHolder;
 import binauld.pierre.resume.view.holders.SkillViewHolder;
 
 
-public class SkillAdapter extends RecyclerView.Adapter<SkillViewHolder> {
+public class SkillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    public static final int HEADER_VIEW_TYPE = 0;
+    public static final int SKILL_VIEW_TYPE = 1;
 
     private Context context;
-    private List<Skill> skills;
+    private List<Object> datas;
+    private List<Integer> dataTypes;
 
     float primaryAlpha;
     float iconAlpha;
 
-    public SkillAdapter(Context context, List<Skill> skills) {
+    public SkillAdapter(Context context, List<SkillCategory> skillCategories) {
         this.context = context;
-        this.skills = skills;
+
+        this.datas      = new ArrayList<>();
+        this.dataTypes  = new ArrayList<>();
+        for (SkillCategory category : skillCategories) {
+            datas.add(category.getName());
+            dataTypes.add(HEADER_VIEW_TYPE);
+
+            datas.addAll(category);
+            for (Skill skill : category) {
+                dataTypes.add(SKILL_VIEW_TYPE);
+            }
+        }
 
         TypedValue primaryAlphaValue = new TypedValue();
         context.getResources().getValue(R.fraction.dark_on_light_primary, primaryAlphaValue, true);
@@ -38,15 +57,47 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillViewHolder> {
     }
 
     @Override
-    public SkillViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_skill, parent, false);
-
-        return new SkillViewHolder(v);
+    public int getItemViewType(int position) {
+        return dataTypes.get(position);
     }
 
     @Override
-    public void onBindViewHolder(final SkillViewHolder holder, int position) {
-        final Skill skill = skills.get(position);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        switch (viewType) {
+
+            case HEADER_VIEW_TYPE:
+                View headerView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_header, parent, false);
+                return new HeaderViewHolder(headerView);
+
+            case SKILL_VIEW_TYPE:
+            default:
+                View skillView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_skill, parent, false);
+                return new SkillViewHolder(skillView);
+        }
+
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        int viewType = getItemViewType(position);
+        switch (viewType) {
+            case HEADER_VIEW_TYPE:
+                onBindViewHolder((HeaderViewHolder) holder, (String) datas.get(position));
+                break;
+            case SKILL_VIEW_TYPE:
+                onBindViewHolder((SkillViewHolder) holder, (Skill) datas.get(position));
+                break;
+        }
+
+
+    }
+
+    public void onBindViewHolder(HeaderViewHolder holder, String name) {
+        holder.title.setText(name);
+    }
+
+    public void onBindViewHolder(SkillViewHolder holder, Skill skill) {
         int rank = skill.getRank();
 
         holder.title.setText(skill.getName());
@@ -111,6 +162,6 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillViewHolder> {
 
     @Override
     public int getItemCount() {
-        return skills.size();
+        return datas.size();
     }
 }

@@ -18,7 +18,7 @@ import binauld.pierre.resume.factories.impl.StaggeredGridLayoutManagerFactory;
 import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.fragments.impl.EducationFragment;
 import binauld.pierre.resume.fragments.impl.ExperienceFragment;
-import binauld.pierre.resume.fragments.impl.SkillFragment;
+import binauld.pierre.resume.fragments.SkillFragment;
 import binauld.pierre.resume.model.Account;
 import dagger.Module;
 import dagger.Provides;

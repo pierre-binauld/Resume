@@ -18,6 +18,12 @@ public class Skill {
         this.name = name;
     }
 
+    public Skill(String name, int picture, int rank) {
+        this.picture = picture;
+        this.name = name;
+        this.rank = rank;
+    }
+
     public int getRank() {
         return rank;
     }

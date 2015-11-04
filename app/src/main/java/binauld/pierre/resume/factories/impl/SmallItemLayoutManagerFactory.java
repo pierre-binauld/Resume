@@ -3,11 +3,8 @@ package binauld.pierre.resume.factories.impl;
 
 import android.app.Activity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
-import binauld.pierre.resume.factories.LayoutManagerFactory;
-
-public class SmallItemLayoutManagerFactory implements LayoutManagerFactory {
+public class SmallItemLayoutManagerFactory {
 
     private int spanCount;
 
@@ -15,8 +12,9 @@ public class SmallItemLayoutManagerFactory implements LayoutManagerFactory {
         this.spanCount = spanCount;
     }
 
-    @Override
-    public RecyclerView.LayoutManager getLayoutManager(Activity activity) {
-        return new GridLayoutManager(activity, spanCount);
+    public GridLayoutManager getLayoutManager(Activity activity, GridLayoutManager.SpanSizeLookup spanSizeLookup) {
+        GridLayoutManager layoutManager = new GridLayoutManager(activity, spanCount);
+        layoutManager.setSpanSizeLookup(spanSizeLookup);
+        return layoutManager;
     }
 }

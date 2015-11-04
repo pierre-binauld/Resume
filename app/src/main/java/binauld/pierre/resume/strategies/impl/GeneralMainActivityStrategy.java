@@ -11,7 +11,7 @@ import binauld.pierre.resume.R;
 import binauld.pierre.resume.fragments.ListFragment;
 import binauld.pierre.resume.fragments.impl.EducationFragment;
 import binauld.pierre.resume.fragments.impl.ExperienceFragment;
-import binauld.pierre.resume.fragments.impl.SkillFragment;
+import binauld.pierre.resume.fragments.SkillFragment;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
 import binauld.pierre.resume.model.Account;
@@ -130,7 +130,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the skills fragment.
      */
     private void switchToSkillsFragment() {
-        ListFragment fragment = new SkillFragment();
+        SkillFragment fragment = new SkillFragment();
         switchFragment(fragment);
     }
 

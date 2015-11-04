@@ -8,7 +8,7 @@ import dagger.ObjectGraph;
  */
 public class Application extends android.app.Application {
 
-    private ObjectGraph objectGraph;
+    private ObjectGraph appGraph;
 
     @Override
     public void onCreate() {
@@ -16,10 +16,10 @@ public class Application extends android.app.Application {
 
         ApplicationModule applicationModule = new ApplicationModule(this);
 
-        objectGraph = ObjectGraph.create(applicationModule);
+        appGraph = ObjectGraph.create(applicationModule);
     }
 
-    public ObjectGraph getObjectGraph() {
-        return objectGraph;
+    public ObjectGraph getAppGraph() {
+        return appGraph;
     }
 }

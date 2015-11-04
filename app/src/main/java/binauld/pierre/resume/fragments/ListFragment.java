@@ -27,14 +27,10 @@ public abstract class ListFragment extends Fragment {
     @Bind(R.id.fragment_list_view)
     protected RecyclerView listView;
 
-//    private RecyclerView.Adapter adapter;
-//
-//    private RecyclerView.LayoutManager layoutManager;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
-        ((Application) getActivity().getApplication()).getObjectGraph().inject(this);
+        ((Application) getActivity().getApplication()).getAppGraph().inject(this);
         ButterKnife.bind(this, view);
 
         listView.setHasFixedSize(true);
@@ -45,14 +41,6 @@ public abstract class ListFragment extends Fragment {
 
         return view;
     }
-
-//    public void setAdapter(RecyclerView.Adapter adapter) {
-//        this.adapter = adapter;
-//    }
-//
-//    public void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
-//        this.layoutManager = layoutManager;
-//    }
 
     protected abstract RecyclerView.Adapter buildAdapter();
 

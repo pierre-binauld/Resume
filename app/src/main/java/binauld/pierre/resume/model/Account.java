@@ -16,7 +16,7 @@ public class Account {
     private String email;
     private List<Education> educations;
     private List<Experience> experiences;
-    private List<Skill> skills;
+    private List<SkillCategory> skillCategories;
 
     public Account(Resources res) {
 
@@ -27,9 +27,9 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        educations  = Account.buildEducations();
-        experiences = Account.buildExperiences();
-        skills      = Account.buildSkills();
+        educations      = Account.buildEducations();
+        experiences     = Account.buildExperiences();
+        skillCategories = Account.buildSkillCategories();
     }
 
     public int getPictureAccount() {
@@ -64,8 +64,8 @@ public class Account {
         return experiences;
     }
 
-    public List<Skill> getSkills() {
-        return skills;
+    public List<SkillCategory> getSkillCategories() {
+        return skillCategories;
     }
 
     private static List<Experience> buildExperiences() {
@@ -166,130 +166,92 @@ public class Account {
         return educations;
     }
 
-    private static List<Skill> buildSkills() {
-        List<Skill> skills = new ArrayList<>();
+    private static List<SkillCategory> buildSkillCategories() {
 
-        Skill linux = new Skill("Linux", R.drawable.linux);
-        linux.setRank(4);
-        skills.add(linux);
+        // --- --- --- -- -- -
 
-        Skill windows = new Skill("Windows", R.drawable.windows);
-        windows.setRank(4);
-        skills.add(windows);
+        Skill linux     = new Skill("Linux",    R.drawable.linux,   4);
+        Skill windows   = new Skill("Windows",  R.drawable.windows, 4);
 
-        Skill eclipse = new Skill("Eclipse", R.drawable.eclipse);
-        eclipse.setRank(4);
-        skills.add(eclipse);
+        Skill eclipse       = new Skill("Eclipse",          R.drawable.eclipse,         4);
+        Skill androidStudio = new Skill("Android Studio",   R.drawable.android_studio,  3);
+        Skill git           = new Skill("Git",              R.drawable.git,             3);
+        Skill svn           = new Skill("SVN",              R.drawable.svn,             3);
+        Skill maven         = new Skill("Maven",            R.drawable.maven,           3);
+        Skill jenkins       = new Skill("Jenkins",          R.drawable.jenkins,         2);
+        Skill jira          = new Skill("Jira",             R.drawable.jira,            2);
 
-        Skill androidStudio = new Skill("Android Studio", R.drawable.android_studio);
-        androidStudio.setRank(3);
-        skills.add(androidStudio);
+        Skill sql       = new Skill("SQL",      R.drawable.sql,     4);
+        Skill mysql     = new Skill("MySQL",    R.drawable.mysql,   4);
+        Skill oracle    = new Skill("Oracle",   R.drawable.oracle,  2);
 
-        Skill git = new Skill("Git", R.drawable.git);
-        git.setRank(3);
-        skills.add(git);
+        Skill java       = new Skill("Java",         R.drawable.java,        4);
+        Skill android    = new Skill("Android",      R.drawable.android,     3);
+        Skill j2ee       = new Skill("J2EE",         R.drawable.j2ee,        3);
+        Skill spring     = new Skill("Spring",       R.drawable.spring,      2);
+        Skill hibernate  = new Skill("Hibernate",    R.drawable.hibernate,   2);
+        Skill tapestry   = new Skill("Tapestry",     R.drawable.tapestry,    2);
+        Skill junit      = new Skill("JUnit",        R.drawable.junit,       2);
+        Skill cpp        = new Skill("C/C++",        R.drawable.cpp,         3);
+        Skill xml        = new Skill("XML",          R.drawable.xml,         3);
+        Skill rest       = new Skill("REST",         R.drawable.rest,        2);
+        Skill soap       = new Skill("SOAP",         R.drawable.soap,        2);
+        Skill json       = new Skill("JSON",         R.drawable.json,        2);
+        Skill php        = new Skill("PHP",          R.drawable.php,         3);
+        Skill zend       = new Skill("Zend",         R.drawable.zend,        2);
+        Skill html       = new Skill("HTML",         R.drawable.html,        4);
+        Skill css        = new Skill("CSS",         R.drawable.css,         3);
+        Skill javascript = new Skill("Javascript",   R.drawable.javascript,  2);
+        Skill jquery     = new Skill("JQuery",       R.drawable.jquery,      2);
 
-        Skill svn = new Skill("SVN", R.drawable.svn);
-        svn.setRank(3);
-        skills.add(svn);
+        SkillCategory system = new SkillCategory("Operating System");
+        system.add(linux);
+        system.add(windows);
 
-        Skill maven = new Skill("Maven", R.drawable.maven);
-        maven.setRank(3);
-        skills.add(maven);
+        SkillCategory software = new SkillCategory("Software");
+        software.add(androidStudio);
+        software.add(eclipse);
+        software.add(git);
+        software.add(svn);
+        software.add(maven);
+        software.add(jenkins);
+        software.add(jira);
 
-        Skill jenkins = new Skill("Jenkins", R.drawable.jenkins);
-        jenkins.setRank(2);
-        skills.add(jenkins);
+        SkillCategory db = new SkillCategory("Database");
+        db.add(sql);
+        db.add(mysql);
+        db.add(oracle);
 
-        Skill jira = new Skill("Jira", R.drawable.jira);
-        jira.setRank(2);
-        skills.add(jira);
+        SkillCategory web = new SkillCategory("Web Development");
+        web.add(php);
+        web.add(zend);
+        web.add(html);
+        web.add(css);
+        web.add(javascript);
+        web.add(jquery);
+        web.add(xml);
+        web.add(rest);
+        web.add(soap);
+        web.add(json);
 
-        Skill mysql = new Skill("MySQL", R.drawable.mysql);
-        mysql.setRank(4);
-        skills.add(mysql);
+        SkillCategory dev = new SkillCategory("Application Development");
+        dev.add(java);
+        dev.add(android);
+        dev.add(j2ee);
+        dev.add(spring);
+        dev.add(hibernate);
+        dev.add(tapestry);
+        dev.add(junit);
+        dev.add(cpp);
 
-        Skill oracle = new Skill("Oracle", R.drawable.oracle);
-        oracle.setRank(2);
-        skills.add(oracle);
+        List<SkillCategory> skillCategories = new ArrayList<>();
+        skillCategories.add(dev);
+        skillCategories.add(web);
+        skillCategories.add(db);
+        skillCategories.add(software);
+        skillCategories.add(system);
 
-        Skill java = new Skill("Java", R.drawable.java);
-        java.setRank(4);
-        skills.add(java);
-
-        Skill android = new Skill("Android", R.drawable.android);
-        android.setRank(3);
-        skills.add(android);
-
-        Skill j2ee = new Skill("J2EE", R.drawable.j2ee);
-        j2ee.setRank(3);
-        skills.add(j2ee);
-
-        Skill spring = new Skill("Spring", R.drawable.spring);
-        spring.setRank(2);
-        skills.add(spring);
-
-        Skill hibernate = new Skill("Hibernate", R.drawable.hibernate);
-        hibernate.setRank(2);
-        skills.add(hibernate);
-
-        Skill tapestry = new Skill("Tapestry", R.drawable.tapestry);
-        tapestry.setRank(2);
-        skills.add(tapestry);
-
-        Skill junit = new Skill("JUnit", R.drawable.junit);
-        junit.setRank(2);
-        skills.add(junit);
-
-        Skill cpp = new Skill("C/C++", R.drawable.cpp);
-        cpp.setRank(3);
-        skills.add(cpp);
-
-        Skill sql = new Skill("SQL", R.drawable.sql);
-        sql.setRank(4);
-        skills.add(sql);
-
-        Skill xml = new Skill("XML", R.drawable.xml);
-        xml.setRank(3);
-        skills.add(xml);
-
-        Skill rest = new Skill("REST", R.drawable.rest);
-        rest.setRank(2);
-        skills.add(rest);
-
-        Skill soap = new Skill("SOAP", R.drawable.soap);
-        soap.setRank(2);
-        skills.add(soap);
-
-        Skill json = new Skill("JSON", R.drawable.json);
-        json.setRank(2);
-        skills.add(json);
-
-        Skill php = new Skill("PHP", R.drawable.php);
-        php.setRank(3);
-        skills.add(php);
-
-        Skill zend = new Skill("Zend", R.drawable.zend);
-        zend.setRank(2);
-        skills.add(zend);
-
-        Skill html = new Skill("HTML", R.drawable.html);
-        html.setRank(4);
-        skills.add(html);
-
-        Skill css = new Skill("HTML", R.drawable.css);
-        css.setRank(3);
-        skills.add(css);
-
-        Skill javascript = new Skill("Javascript", R.drawable.javascript);
-        javascript.setRank(2);
-        skills.add(javascript);
-
-        Skill jquery = new Skill("JQuery", R.drawable.jquery);
-        jquery.setRank(2);
-        skills.add(jquery);
-
-        return skills;
+        return skillCategories;
     }
 }
 

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((Application) getApplication()).getObjectGraph().inject(this);
+        ((Application) getApplication()).getAppGraph().inject(this);
 
         strategy = strategyFactory.getActivityStrategy(this, account);
 
