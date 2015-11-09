@@ -13,18 +13,6 @@ import binauld.pierre.resume.model.Account;
 public interface MainActivityStrategy extends NavigationView.OnNavigationItemSelectedListener {
 
     /**
-     * Get the activity of the strategy.
-     * @return The activity.
-     */
-    AppCompatActivity getActivity();
-
-    /**
-     * Get the user account.
-     * @return The user account.
-     */
-    Account getAccount();
-
-    /**
      * Manage views during the onCreate method.
      * @param savedInstanceState The savedInstanceState of the activity onCreate method.
      */

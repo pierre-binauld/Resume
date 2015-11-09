@@ -1,6 +1,5 @@
 package binauld.pierre.resume.fragments;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +11,11 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.modules.SkillFragmentModule;
+import binauld.pierre.resume.modules.EducationFragmentModule;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SkillFragment extends Fragment {
+public class EducationFragment extends Fragment {
 
     @Inject
     protected RecyclerView.LayoutManager layoutManager;
@@ -30,7 +29,7 @@ public class SkillFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
-        ((Application) getActivity().getApplication()).createScopedGraph(new SkillFragmentModule(this)).inject(this);
+        ((Application) getActivity().getApplication()).createScopedGraph(new EducationFragmentModule(this)).inject(this);
         ButterKnife.bind(this, view);
 
         listView.setHasFixedSize(true);

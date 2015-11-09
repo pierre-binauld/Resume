@@ -8,9 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import binauld.pierre.resume.R;
-import binauld.pierre.resume.fragments.ListFragment;
-import binauld.pierre.resume.fragments.impl.EducationFragment;
-import binauld.pierre.resume.fragments.impl.ExperienceFragment;
+import binauld.pierre.resume.fragments.EducationFragment;
+import binauld.pierre.resume.fragments.ExperienceFragment;
 import binauld.pierre.resume.fragments.SkillFragment;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
@@ -27,9 +26,9 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
     public static final String CURRENT_MENU_ITEM_ID = "currentMenuItemId";
 
-    private AppCompatActivity activity;
+    protected AppCompatActivity activity;
 
-    private Account account;
+    protected Account account;
 
     private LocationListener locationListener;
     private BrowserListener  browserListener;
@@ -45,24 +44,15 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     public GeneralMainActivityStrategy(AppCompatActivity activity, Account account) {
         this.activity = activity;
         this.account = account;
-        ButterKnife.bind(this, activity);
-
-        locationListener = new LocationListener(activity);
-        browserListener  = new BrowserListener(activity);
-    }
-
-    @Override
-    public AppCompatActivity getActivity() {
-        return activity;
-    }
-
-    @Override
-    public Account getAccount() {
-        return account;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ButterKnife.bind(this, activity);
+
+        locationListener = new LocationListener(activity);
+        browserListener  = new BrowserListener(activity);
+
         activity.setSupportActionBar(toolbar);
 
         if (savedInstanceState != null) {
@@ -122,7 +112,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the education fragment.
      */
     private void switchToEducationFragment() {
-        ListFragment fragment = new EducationFragment();
+        EducationFragment fragment = new EducationFragment();
         switchFragment(fragment);
     }
 
@@ -139,7 +129,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the experiences fragment.
      */
     private void switchToExperiencesFragment() {
-        ListFragment fragment = new ExperienceFragment();
+        ExperienceFragment fragment = new ExperienceFragment();
         switchFragment(fragment);
     }
 
@@ -148,7 +138,7 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the miscellaneous fragment.
      */
     private void switchToMiscFragment() {
-//        ListFragment fragment = new ListFragment();
+//        MiscFragment fragment = new MiscFragment();
 //        switchFragment(fragment);
     }
 

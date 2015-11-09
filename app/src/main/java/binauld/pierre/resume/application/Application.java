@@ -22,4 +22,8 @@ public class Application extends android.app.Application {
     public ObjectGraph getAppGraph() {
         return appGraph;
     }
+
+    public ObjectGraph createScopedGraph(Object... modules) {
+        return appGraph.plus(modules);
+    }
 }

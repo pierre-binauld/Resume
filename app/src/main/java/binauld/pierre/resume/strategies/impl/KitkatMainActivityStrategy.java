@@ -7,6 +7,8 @@ import android.view.MenuItem;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
+import javax.inject.Inject;
+
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
@@ -20,21 +22,11 @@ public class KitkatMainActivityStrategy implements MainActivityStrategy {
 
     private MainActivityStrategy strategy;
 
-    private AppCompatActivity activity;
+    protected AppCompatActivity activity;
 
-    public KitkatMainActivityStrategy(MainActivityStrategy strategy) {
+    public KitkatMainActivityStrategy(AppCompatActivity activity, MainActivityStrategy strategy) {
+        this.activity = activity;
         this.strategy = strategy;
-        this.activity = strategy.getActivity();
-    }
-
-    @Override
-    public AppCompatActivity getActivity() {
-        return activity;
-    }
-
-    @Override
-    public Account getAccount() {
-        return strategy.getAccount();
     }
 
     @Override

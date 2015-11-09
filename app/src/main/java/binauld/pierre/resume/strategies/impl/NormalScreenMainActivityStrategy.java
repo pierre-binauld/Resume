@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import javax.inject.Inject;
+
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.model.Account;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
@@ -29,9 +31,9 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
 
     private MainActivityStrategy strategy;
 
-    private AppCompatActivity activity;
+    protected AppCompatActivity activity;
 
-    private Account account;
+    protected Account account;
 
     @Bind(R.id.toolbar)
     public Toolbar toolbar;
@@ -54,25 +56,15 @@ public class NormalScreenMainActivityStrategy implements MainActivityStrategy {
     @Bind(R.id.drawer_header_subtitle_email)
     public TextView emailView;
 
-    public NormalScreenMainActivityStrategy(MainActivityStrategy strategy) {
+    public NormalScreenMainActivityStrategy(AppCompatActivity activity, Account account, MainActivityStrategy strategy) {
+        this.activity = activity;
+        this.account = account;
         this.strategy = strategy;
-        this.activity = strategy.getActivity();
-        this.account = strategy.getAccount();
-        ButterKnife.bind(this, activity);
-    }
-
-    @Override
-    public AppCompatActivity getActivity() {
-        return activity;
-    }
-
-    @Override
-    public Account getAccount() {
-        return account;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ButterKnife.bind(this, activity);
         strategy.onCreate(savedInstanceState);
 
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(

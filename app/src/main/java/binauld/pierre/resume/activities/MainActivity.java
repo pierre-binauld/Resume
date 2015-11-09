@@ -7,9 +7,10 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.factories.MainActivityStrategyFactory;
 import binauld.pierre.resume.model.Account;
+import binauld.pierre.resume.modules.MainActivityModule;
 import binauld.pierre.resume.strategies.MainActivityStrategy;
+import dagger.ObjectGraph;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,17 +18,14 @@ public class MainActivity extends AppCompatActivity {
     protected Account account;
 
     @Inject
-    protected MainActivityStrategyFactory strategyFactory;
-
     protected MainActivityStrategy strategy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((Application) getApplication()).getAppGraph().inject(this);
-
-        strategy = strategyFactory.getActivityStrategy(this, account);
+        ObjectGraph mainActivityGraph = ((Application) getApplication()).createScopedGraph(new MainActivityModule(this));
+        mainActivityGraph.inject(this);
 
         strategy.onCreate(savedInstanceState);
     }

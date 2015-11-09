@@ -1,6 +1,5 @@
 package binauld.pierre.resume.fragments;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -12,17 +11,17 @@ import javax.inject.Inject;
 
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.application.Application;
-import binauld.pierre.resume.model.Account;
+import binauld.pierre.resume.modules.ExperienceFragmentModule;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public abstract class ListFragment extends Fragment {
+public class ExperienceFragment extends Fragment {
 
     @Inject
-    protected Account account;
+    protected RecyclerView.LayoutManager layoutManager;
+
+    @Inject
+    protected RecyclerView.Adapter adapter;
 
     @Bind(R.id.fragment_list_view)
     protected RecyclerView listView;
@@ -30,19 +29,15 @@ public abstract class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
-        ((Application) getActivity().getApplication()).getAppGraph().inject(this);
+        ((Application) getActivity().getApplication()).createScopedGraph(new ExperienceFragmentModule(this)).inject(this);
         ButterKnife.bind(this, view);
 
         listView.setHasFixedSize(true);
 
-        listView.setLayoutManager(buildLayoutManager());
+        listView.setLayoutManager(layoutManager);
 
-        listView.setAdapter(buildAdapter());
+        listView.setAdapter(adapter);
 
         return view;
     }
-
-    protected abstract RecyclerView.Adapter buildAdapter();
-
-    protected abstract RecyclerView.LayoutManager buildLayoutManager();
 }
