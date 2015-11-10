@@ -30,9 +30,6 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
 
     protected Account account;
 
-    private LocationListener locationListener;
-    private BrowserListener  browserListener;
-
     private int currentMenuItemId;
 
     @Bind(R.id.toolbar)
@@ -49,9 +46,6 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         ButterKnife.bind(this, activity);
-
-        locationListener = new LocationListener(activity);
-        browserListener  = new BrowserListener(activity);
 
         activity.setSupportActionBar(toolbar);
 
