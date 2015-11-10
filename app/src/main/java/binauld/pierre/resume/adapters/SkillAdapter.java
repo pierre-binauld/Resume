@@ -1,6 +1,7 @@
 package binauld.pierre.resume.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -29,8 +30,8 @@ public class SkillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private List<Object> datas;
     private List<Integer> dataTypes;
 
-    float primaryAlpha;
-    float iconAlpha;
+    private Drawable star;
+    private Drawable emptyStar;
 
     public SkillAdapter(Context context, List<SkillCategory> skillCategories) {
         this.context = context;
@@ -47,13 +48,8 @@ public class SkillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
         }
 
-        TypedValue primaryAlphaValue = new TypedValue();
-        context.getResources().getValue(R.fraction.dark_on_light_primary, primaryAlphaValue, true);
-        primaryAlpha = primaryAlphaValue.getFloat();
-
-        TypedValue iconAlphaValue = new TypedValue();
-        context.getResources().getValue(R.fraction.icon_disabled, iconAlphaValue, true);
-        iconAlpha = iconAlphaValue.getFloat();
+        star = context.getResources().getDrawable(R.drawable.ic_star);
+        emptyStar = context.getResources().getDrawable(R.drawable.ic_star_accent_dark);
     }
 
     @Override
@@ -109,55 +105,11 @@ public class SkillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 .centerCrop()
                 .into(holder.picture);
 
-        Picasso
-                .with(context)
-                .load(rank < 1 ? R.drawable.ic_star : R.drawable.ic_star_accent_dark)
-                .fit()
-                .centerCrop()
-                .into(holder.star1);
-        holder.star1.setAlpha(
-                rank < 1 ? iconAlpha : primaryAlpha
-        );
-
-        Picasso
-                .with(context)
-                .load(rank < 2 ? R.drawable.ic_star :  R.drawable.ic_star_accent_dark)
-                .fit()
-                .centerCrop()
-                .into(holder.star2);
-        holder.star2.setAlpha(
-                rank < 2 ? iconAlpha : primaryAlpha
-        );
-
-        Picasso
-                .with(context)
-                .load(rank < 3 ? R.drawable.ic_star :  R.drawable.ic_star_accent_dark)
-                .fit()
-                .centerCrop()
-                .into(holder.star3);
-        holder.star3.setAlpha(
-                rank < 3 ? iconAlpha : primaryAlpha
-        );
-
-        Picasso
-                .with(context)
-                .load(rank < 4 ? R.drawable.ic_star :  R.drawable.ic_star_accent_dark)
-                .fit()
-                .centerCrop()
-                .into(holder.star4);
-        holder.star4.setAlpha(
-                rank < 4 ? iconAlpha : primaryAlpha
-        );
-
-        Picasso
-                .with(context)
-                .load(rank < 5 ? R.drawable.ic_star :  R.drawable.ic_star_accent_dark)
-                .fit()
-                .centerCrop()
-                .into(holder.star5);
-        holder.star5.setAlpha(
-                rank < 5 ? iconAlpha : primaryAlpha
-        );
+        holder.star1.setImageDrawable(rank < 1 ? star : emptyStar);
+        holder.star2.setImageDrawable(rank < 2 ? star : emptyStar);
+        holder.star3.setImageDrawable(rank < 3 ? star : emptyStar);
+        holder.star4.setImageDrawable(rank < 4 ? star : emptyStar);
+        holder.star5.setImageDrawable(rank < 5 ? star : emptyStar);
     }
 
     @Override
