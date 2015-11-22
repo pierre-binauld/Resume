@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 /**
  * Hold views for experience list item.
  */
-public class ExperienceViewHolder extends RecyclerView.ViewHolder {
+public class Experience2ViewHolder extends RecyclerView.ViewHolder {
 
     @Bind(R.id.card_picture)
     public ImageView picture;
@@ -31,16 +31,13 @@ public class ExperienceViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.card_date_range_text_end)
     public TextView dateRangeEnd;
 
-    @Bind(R.id.card_chips_container)
-    public ChipsContainer chipsContainer;
-
     @Bind(R.id.card_action_1)
     public ImageButton action1;
 
     @Bind(R.id.card_action_2)
     public ImageButton action2;
 
-    public ExperienceViewHolder(View view) {
+    public Experience2ViewHolder(View view) {
         super(view);
         ButterKnife.bind(this, view);
     }

@@ -19,7 +19,6 @@
         <item
             android:id="@+id/nav_item_misc"
             android:icon="@drawable/ic_plugin"
-            android:title="@string/nav_item_misc"
-            android:enabled="false" />
+            android:title="@string/nav_item_misc" />
     </group>
 </menu>

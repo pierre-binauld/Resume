@@ -85,8 +85,6 @@ public class SkillAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 onBindViewHolder((SkillViewHolder) holder, (Skill) datas.get(position));
                 break;
         }
-
-
     }
 
     public void onBindViewHolder(HeaderViewHolder holder, String name) {

@@ -60,13 +60,6 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceViewHolder
 
 
         new PicassoLoaderTask(context, experience.getPicture(), holder.picture).execute();
-//        Picasso
-//                .with(context)
-//                .load(experience.getPicture())
-//                .fit()
-//                .centerCrop()
-//                .into(holder.picture);
-
         holder.primaryTitle.setText(experience.getPosition());
         holder.primarySubtitle.setText( experience.getCompany() );
         holder.dateRangeStart.setText(experience.getStart());

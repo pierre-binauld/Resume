@@ -16,6 +16,7 @@ public class Account {
     private String email;
     private List<Education> educations;
     private List<Experience> experiences;
+    private List<Experience> otherExperiences;
     private List<SkillCategory> skillCategories;
 
     public Account(Resources res) {
@@ -27,9 +28,11 @@ public class Account {
         pictureAccount  = R.drawable.account_picture;
         picturePanorama = R.drawable.account_panorama;
 
-        educations      = Account.buildEducations();
-        experiences     = Account.buildExperiences();
-        skillCategories = Account.buildSkillCategories();
+        educations       = Account.buildEducations();
+        experiences      = Account.buildExperiences();
+        skillCategories  = Account.buildSkillCategories();
+        otherExperiences = Account.buildOtherExperiences();
+
     }
 
     public int getPictureAccount() {
@@ -66,6 +69,29 @@ public class Account {
 
     public List<SkillCategory> getSkillCategories() {
         return skillCategories;
+    }
+
+    public List<Experience> getOtherExperiences() {
+        return otherExperiences;
+    }
+
+    private static List<Experience> buildOtherExperiences() {
+
+        List<Experience> experiences = new ArrayList<>();
+
+        Experience experience1 = new Experience(
+                "Cashier (part time)",
+                "Grand Frais",
+                "Jul. 2011",
+                "Aug. 2012",
+                R.drawable.grand_frais
+        );
+        experience1.setLocation("Grand Frais, zone commerciale du Grand Epagny, Rue de la Mandallaz, 74330 Epagny");
+        experience1.setWebPage("http://www.grandfrais.com/epagny/magasin-108.html");
+
+        experiences.add(experience1);
+
+        return experiences;
     }
 
     private static List<Experience> buildExperiences() {

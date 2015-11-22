@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import binauld.pierre.resume.R;
 import binauld.pierre.resume.fragments.EducationFragment;
 import binauld.pierre.resume.fragments.ExperienceFragment;
+import binauld.pierre.resume.fragments.MiscellaneousFragment;
 import binauld.pierre.resume.fragments.SkillFragment;
 import binauld.pierre.resume.listeners.BrowserListener;
 import binauld.pierre.resume.listeners.LocationListener;
@@ -132,8 +133,8 @@ public class GeneralMainActivityStrategy implements MainActivityStrategy {
      * Switch to the miscellaneous fragment.
      */
     private void switchToMiscFragment() {
-//        MiscFragment fragment = new MiscFragment();
-//        switchFragment(fragment);
+        MiscellaneousFragment fragment = new MiscellaneousFragment();
+        switchFragment(fragment);
     }
 
     /**
